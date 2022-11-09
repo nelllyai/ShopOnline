@@ -1,0 +1,538 @@
+.aside {
+  padding-top: 45px;
+  padding-bottom: 90px;
+}
+
+.aside__container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 480px repeat(4, 228px);
+  grid-template-areas:
+    "laptops laptops laptops laptops laptops laptops"
+    "books time second-pair second-pair ideas ideas"
+    "red-shoes red-shoes second-pair second-pair benefit benefit"
+    "decorations decorations decorations decorations red-dress household-chemicals"
+    "decorations decorations decorations decorations red-dress balls";
+  gap: 60px;
+}
+
+.aside__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+.aside__item_laptops {
+  padding: 145px 112px 50px;
+  justify-content: space-between;
+  grid-area: laptops;
+  background-image: url("../img/laptops.jpg");
+}
+
+.aside__item_books {
+  padding: 20px;
+  grid-area: books;
+  background-image: url("../img/books.jpg");
+}
+
+.aside__item_time {
+  padding: 45px 10px 20px;
+  justify-content: start;
+  grid-area: time;
+  background-image: url("../img/time.jpg");
+}
+
+.aside__item_second-pair {
+  padding: 20px;
+  grid-area: second-pair;
+  background-image: url("../img/second-pair.jpg");
+}
+
+.aside__item_red-shoes {
+  grid-area: red-shoes;
+  background-image: url("../img/red-shoes.jpg");
+}
+
+.aside__item_ideas {
+  padding: 30px;
+  grid-area: ideas;
+  background-image: url("../img/ideas.jpg");
+}
+
+.aside__item_benefit {
+  padding: 0 100px 40px 30px;
+  grid-area: benefit;
+  background-image: url("../img/benefit.jpg");
+}
+
+.aside__item_decorations {
+  padding: 50px;
+  grid-area: decorations;
+  background-image: url("../img/decorations.jpg");
+}
+
+.aside__item_red-dress {
+  grid-area: red-dress;
+  background-image: url("../img/red-dress.jpg");
+}
+
+.aside__item_household-chemicals {
+  padding: 20px;
+  grid-area: household-chemicals;
+  background-image: url("../img/household-chemicals.jpg");
+}
+
+.aside__item_balls {
+  grid-area: balls;
+  background-image: url("../img/balls.jpg");
+}
+
+.aside__item_time::after,
+.aside__item_red-shoes::after,
+.aside__item_benefit::after,
+.aside__item_red-dress::after,
+.aside__item_household-chemicals::after {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: #FFBD13;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 130%;
+}
+
+.aside__item_time::after {
+  content: "-25%";
+}
+
+.aside__item_red-shoes::after {
+  content: "-40%";
+}
+
+.aside__item_benefit::after {
+  content: "-15%";
+}
+
+.aside__item_red-dress::after {
+  content: "-55%";
+}
+
+.aside__item_household-chemicals::after {
+  content: "-25%";
+}
+
+.aside__item_time::after,
+.aside__item_benefit::after,
+.aside__item_red-dress::after {
+  bottom: 20px;
+  right: 20px;
+}
+
+.aside__item_red-shoes::after,
+.aside__item_household-chemicals::after {
+  top: 20px;
+  left: 20px;
+}
+
+.aside__offer {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 130%;
+}
+
+.aside__offer_huge {
+  font-size: 70px;
+  line-height: 130%;
+}
+
+.aside__sale {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.aside__offer_small {
+  font-size: 16px;
+  line-height: 130%;
+}
+
+.aside__timer {
+  font-size: 32px;
+  line-height: 130%;
+}
+
+.aside__counter {
+  font-size: 60px;
+  line-height: 130%;
+}
+
+.aside__thin-text {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 36px;
+}
+
+.aside__offer_blue-background {
+  padding: 24px 26px;
+  border-radius: 20px;
+  background-color: #38C0EB;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.aside__offer_big {
+  font-size: 40px;
+}
+
+.aside__offer_red-text {
+  padding: 30px 40px;
+  max-width: 643px;
+  border-radius: 20px;
+  background-color: #fff;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 120%;
+  color: #F91155;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1366px) {
+  .aside {
+    padding-top: 30px;
+  }
+
+  .aside__container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 314px repeat(4, 202px) 418px;
+    grid-template-areas:
+      "laptops laptops laptops laptops"
+      "books time second-pair second-pair"
+      "red-shoes red-shoes second-pair second-pair"
+      "ideas ideas red-dress household-chemicals"
+      "benefit benefit red-dress balls"
+      "decorations decorations decorations decorations";
+    gap: 22px 30px;
+  }
+
+  .aside__item {
+    border-radius: 16px;
+  }
+
+  .aside__item_laptops {
+    padding: 80px 80px 36px;
+  }
+
+  .aside__item_books {
+    padding: 32px 14px;
+  }
+
+  .aside__item_second-pair {
+    padding: 10px;
+  }
+
+  .aside__item_benefit {
+    padding: 20px;
+  }
+
+  .aside__item_decorations {
+    padding: 40px 30px;
+  }
+
+  .aside__item_household-chemicals {
+    padding: 20px 10px;
+  }
+
+  .aside__item_time::after,
+  .aside__item_benefit::after,
+  .aside__item_red-dress::after {
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .aside__item_red-shoes::after,
+  .aside__item_household-chemicals::after {
+    top: 10px;
+    left: 10px;
+  }
+
+  .aside__offer {
+    font-size: 24px;
+  }
+
+  .aside__offer_huge {
+    font-size: 40px;
+  }
+
+  .aside__sale {
+    gap: 10px;
+  }
+
+  .aside__timer {
+    font-size: 20px;
+  }
+
+  .aside__counter {
+    font-size: 40px;
+  }
+
+  .aside__thin-text {
+    font-size: 24px;
+    line-height: 31px;
+  }
+
+  .aside__offer_blue-background {
+    padding: 30px 25px;
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .aside__offer_big {
+    font-size: 30px;
+    line-height: 130%;
+  }
+
+  .aside__offer_red-text {
+    padding: 23px 46px;
+    max-width: 513px;
+    border-radius: 16px;
+    font-size: 30px;
+  }
+
+  .aside__offer_slim {
+    font-size: 20px;
+    line-height: 130%;
+  }
+}
+
+@media (max-width: 768px) {
+  .aside {
+    padding-top: 25px;
+    padding-bottom: 65px;
+  }
+
+  .aside__container {
+    grid-template-rows: repeat(9, 130px);
+    grid-template-rows: 280px repeat(4, 130px) 337px;
+    grid-template-areas:
+      "laptops laptops laptops laptops"
+      "books time second-pair second-pair"
+      "red-shoes red-shoes second-pair second-pair"
+      "ideas ideas red-dress household-chemicals"
+      "benefit benefit red-dress balls"
+      "decorations decorations decorations decorations";
+    gap: 22px 20px;
+  }
+
+  .aside__item {
+    border-radius: 12px;
+  }
+
+  .aside__item_laptops {
+    padding: 64px 80px 30px;
+  }
+
+  .aside__item_books {
+    padding: 15px 10px;
+  }
+
+  .aside__item_time {
+    padding-top: 15px;
+  }
+
+  .aside__item_second-pair {
+    padding: 10px;
+  }
+
+  .aside__item_ideas {
+    padding: 20px;
+  }
+
+  .aside__item_benefit {
+    padding: 0 70px 20px 20px;
+  }
+
+  .aside__item_decorations {
+    padding: 26px;
+  }
+
+  .aside__item_household-chemicals {
+    padding: 15px;
+  }
+
+  .aside__item_time::after,
+  .aside__item_red-shoes::after,
+  .aside__item_benefit::after,
+  .aside__item_red-dress::after,
+  .aside__item_household-chemicals::after {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .aside__offer {
+    font-size: 16px;
+  }
+
+  .aside__offer_huge {
+    font-size: 30px;
+  }
+
+  .aside__timer {
+    font-size: 16px;
+  }
+
+  .aside__counter {
+    font-size: 30px;
+  }
+
+  .aside__thin-text {
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  .aside__offer_blue-background {
+    padding: 26px 20px;
+    font-size: 26px;
+    line-height: 28px;
+  }
+
+  .aside__offer_big {
+    font-size: 16px;
+    line-height: 120%;
+  }
+
+  .aside__offer_red-text {
+    padding: 22px 33px;
+    max-width: 347px;
+    font-size: 20px;
+  }
+
+  .aside__offer_slim {
+    font-size: 16px;
+    line-height: 120%;
+  }
+}
+
+@media (max-width: 540px) {
+  .aside {
+    padding-top: 20px;
+    padding-bottom: 45px;
+  }
+
+  .aside__container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 340px 120px 118px 206px repeat(2, 118px) repeat(2, 95px) 123px;
+    grid-template-areas:
+      "laptops laptops"
+      "books time"
+      "red-shoes red-shoes"
+      "second-pair second-pair"
+      "ideas ideas"
+      "benefit benefit"
+      "red-dress household-chemicals"
+      "red-dress balls"
+      "decorations decorations";
+    gap: 20px;
+  }
+
+  .aside__item {
+    border-radius: 8px;
+  }
+
+  .aside__item_laptops {
+    padding: 50px 25px 30px;
+    align-items: center;
+  }
+
+  .aside__item_books {
+    padding: 10px;
+  }
+
+  .aside__item_time {
+    padding-top: 18px;
+  }
+
+  .aside__item_ideas {
+    padding: 15px 10px;
+  }
+
+  .aside__item_benefit {
+    padding: 10px 16px;
+  }
+
+  .aside__item_decorations {
+    padding: 10px 15px;
+    align-items: center;
+  }
+
+  .aside__item_household-chemicals {
+    padding: 10px;
+  }
+
+  .aside__item_time::after,
+  .aside__item_benefit::after,
+  .aside__item_red-dress::after {
+    bottom: 5px;
+    right: 5px;
+  }
+  
+  .aside__item_red-shoes::after,
+  .aside__item_household-chemicals::after {
+    top: 5px;
+    left: 5px;
+  }
+
+  .aside__offer {
+    font-size: 12px;
+  }
+
+  .aside__offer_huge {
+    font-size: 22px;
+  }
+
+  .aside__sale {
+    gap: 6px;
+  }
+
+  .aside__timer {
+    font-size: 12px;
+  }
+
+  .aside__counter {
+    font-size: 20px;
+  }
+
+  .aside__thin-text {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .aside__offer_blue-background {
+    padding: 25px 10px;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+  }
+
+  .aside__offer_red-text {
+    padding: 10px 41px;
+    max-width: 250px;
+    font-size: 12px;
+  }
+
+  .aside__offer_slim {
+    font-size: 12px;
+  }
+}

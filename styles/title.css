@@ -1,0 +1,26 @@
+.title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 41px;
+  color: #2D2D2D;
+}
+
+.title__focus {
+  color: #3670C7;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 26px;
+    line-height: 35px;
+    letter-spacing: 0.06em;
+  }
+}
+
+@media (max-width: 540px) {
+  .title {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}

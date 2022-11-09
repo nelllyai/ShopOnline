@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ShopOnline</title>
+
+  <link rel="stylesheet" href="styles/index.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <h1 class="title header__title">Shop<span class="title__focus">Online</span></h1>
+
+      <button class="button header__menu-button">Меню</button>
+
+      <form class="header__search" action="#">
+        <fieldset class="header__fieldset">
+          <input class="header__input" type="text" placeholder="Я ищу...">
+          <button class="button header__search-button">
+            <svg class="header__icon-button" width="27" height="27" viewBox="0 0 27 27" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M19.25 17H18.065L17.645 16.595C19.115 14.885 20 12.665 20 10.25C20 4.865 15.635 0.5 10.25 0.5C4.865 0.5 0.5 4.865 0.5 10.25C0.5 15.635 4.865 20 10.25 20C12.665 20 14.885 19.115 16.595 17.645L17 18.065V19.25L24.5 26.735L26.735 24.5L19.25 17ZM10.25 17C6.515 17 3.5 13.985 3.5 10.25C3.5 6.515 6.515 3.5 10.25 3.5C13.985 3.5 17 6.515 17 10.25C17 13.985 13.985 17 10.25 17Z" />
+            </svg>
+          </button>
+        </fieldset>
+      </form>
+
+      <ul class="header__list">
+        <li class="header__item">
+          <a class="header__link" href="#">
+            <svg class="svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 12C15.315 12 18 9.315 18 6C18 2.685 15.315 0 12 0C8.685 0 6 2.685 6 6C6 9.315 8.685 12 12 12ZM12 15C7.995 15 0 17.01 0 21V24H24V21C24 17.01 16.005 15 12 15Z" />
+            </svg>
+            <p class="header__text">Профиль</p>
+          </a>
+        </li>
+        <li class="header__item">
+          <a class="header__link" href="#">
+            <svg class="svg" width="31" height="30" viewBox="0 0 31 30" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M9.5 24C7.85 24 6.515 25.35 6.515 27C6.515 28.65 7.85 30 9.5 30C11.15 30 12.5 28.65 12.5 27C12.5 25.35 11.15 24 9.5 24ZM0.5 0V3H3.5L8.9 14.385L6.875 18.06C6.635 18.48 6.5 18.975 6.5 19.5C6.5 21.15 7.85 22.5 9.5 22.5H27.5V19.5H10.13C9.92 19.5 9.755 19.335 9.755 19.125L9.8 18.945L11.15 16.5H22.325C23.45 16.5 24.44 15.885 24.95 14.955L30.32 5.22C30.44 5.01 30.5 4.755 30.5 4.5C30.5 3.675 29.825 3 29 3H6.815L5.405 0H0.5ZM24.5 24C22.85 24 21.515 25.35 21.515 27C21.515 28.65 22.85 30 24.5 30C26.15 30 27.5 28.65 27.5 27C27.5 25.35 26.15 24 24.5 24Z" />
+            </svg>
+            <p class="header__text">Корзина</p>
+          </a>
+        </li>
+        <li class="header__item">
+          <a class="header__link" href="#">
+            <svg class="svg" width="30" height="29" viewBox="0 0 30 29" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M15 28.025L12.825 26.045C5.1 19.04 0 14.42 0 8.75C0 4.13 3.63 0.5 8.25 0.5C10.86 0.5 13.365 1.715 15 3.635C16.635 1.715 19.14 0.5 21.75 0.5C26.37 0.5 30 4.13 30 8.75C30 14.42 24.9 19.04 17.175 26.06L15 28.025Z" />
+            </svg>
+            <p class="header__text">Избранное</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <aside class="aside">
+    <div class="container aside__container">
+      <div class="aside__item aside__item_laptops">
+        <p class="aside__offer aside__offer_huge">-50% на все ноутбуки</p>
+        <div class="aside__sale">
+          <p class="aside__offer_small">До конца акции:</p>
+          <p class="aside__timer">
+            <span class="aside__counter">3</span> дня <span class="aside__counter">8</span> часов <span
+              class="aside__counter">43</span> минуты
+          </p>
+        </div>
+      </div>
+
+      <div class="aside__item aside__item_books">
+        <p class="aside__offer">
+          Книга –<br><span class="aside__thin-text">лучший подарок</span>
+        </p>
+      </div>
+
+      <div class="aside__item aside__item_time">
+        <p class="aside__offer">Время скидок!</p>
+      </div>
+
+      <div class="aside__item aside__item_second-pair">
+        <p class="aside__offer aside__offer_blue-background">
+          <span class="aside__thin-text">Вторая пара кроссовок</span> в&nbsp;подарок!
+        </p>
+      </div>
+
+      <div class="aside__item aside__item_red-shoes"></div>
+
+      <div class="aside__item aside__item_ideas">
+        <p class="aside__offer aside__offer_big">Идеи новогодних подарков</p>
+      </div>
+
+      <div class="aside__item aside__item_benefit">
+        <p class="aside__offer aside__offer_big">Выгодно в&nbsp;декабре!</p>
+      </div>
+
+      <div class="aside__item aside__item_decorations">
+        <p class="aside__offer aside__offer_red-text">Новогодние украшения</p>
+      </div>
+
+      <div class="aside__item aside__item_red-dress"></div>
+
+      <div class="aside__item aside__item_household-chemicals">
+        <p class="aside__offer aside__offer_slim">На бытовую химию</p>
+      </div>
+
+      <div class="aside__item aside__item_balls"></div>
+    </div>
+  </aside>
+</body>
+
+</html>
