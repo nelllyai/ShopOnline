@@ -365,7 +365,7 @@
   }
 
   .aside__container {
-    grid-template-columns: repeat(2, 140px) 1fr 178px;
+    grid-template-columns: repeat(2, minmax(1fr, 140px)) minmax(100px, 1fr) minmax(1fr, 178px);
     grid-template-rows: 280px 0px 130px repeat(3, 126px) 337px;
     grid-template-areas:
       "laptops laptops laptops laptops"
