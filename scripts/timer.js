@@ -52,7 +52,17 @@ if (timerBlock) {
   }
 
   const getDeclension = (counter, type) => {
-    if (counter % 10 === 1) {
+    if (counter > 10 && counter < 20) {
+      if (type === 'day') {
+        return 'дней';
+      } else if (type === 'hours') {
+        return 'часов';
+      } else if (type === 'minutes') {
+        return 'минут';
+      } else {
+        return 'секунд';
+      }
+    } else if (counter % 10 === 1) {
       if (type === 'day') {
         return 'день';
       } else if (type === 'hours') {
