@@ -166,14 +166,8 @@
 }
 
 .aside__timer {
-  display: flex;
   width: 473px;
-  justify-content: space-between;
   font-size: 32px;
-}
-
-.aside__counter {
-  font-size: 60px;
 }
 
 .aside__thin-text {
@@ -301,8 +295,7 @@
     font-size: 30px;
   }
 
-  .aside__offer_huge,
-  .aside__counter {
+  .aside__offer_huge {
     font-size: 40px;
   }
 
@@ -428,8 +421,7 @@
     line-height: 0.8;
   }
 
-  .aside__offer_huge,
-  .aside__counter {
+  .aside__offer_huge {
     font-size: 30px;
   }
 
@@ -568,10 +560,6 @@
   .aside__timer {
     width: 167px;
     font-size: 12px;
-  }
-
-  .aside__counter {
-    font-size: 20px;
   }
 
   .aside__offer_big {
