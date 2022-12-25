@@ -44,6 +44,7 @@
 
 @media (max-width: 540px) {
   .timer__title {
+    margin-bottom: 0;
     font-size: 8px;
   }
 
