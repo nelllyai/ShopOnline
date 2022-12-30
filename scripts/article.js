@@ -38,7 +38,7 @@ const renderPost = async () => {
         </ul>
       </div>
 
-      <a class="post__button" href="${document.referrer}">К списку статей</a>
+      <a class="post__button" href="blog.html">К списку статей</a>
     </div>
   `;
 
