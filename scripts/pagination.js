@@ -38,7 +38,7 @@ const getPages = async () => {
   return info.meta.pagination;
 };
 
-const rendetButtons = (btnsGroup, pages, currentPage, prevArrow, nextArrow) => {
+const renderButtons = (btnsGroup, pages, currentPage, prevArrow, nextArrow) => {
   const btnsValues = {
     prev: currentPage - 1,
     middle: currentPage,
@@ -79,7 +79,7 @@ const renderNavigation = async () => {
 
   const currentPage = Number(window.location.search.replace('?page=', '')) || 1;
 
-  rendetButtons(btnsGroup, pages, currentPage, prevArrow, nextArrow);
+  renderButtons(btnsGroup, pages, currentPage, prevArrow, nextArrow);
 
   prevArrow.href = `blog.html?page=${currentPage - 1}`;
   nextArrow.href = `blog.html?page=${currentPage + 1}`;
