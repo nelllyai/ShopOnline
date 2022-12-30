@@ -1,0 +1,141 @@
+.article-card {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-basis: 645px;
+}
+
+.article-card__image {
+  float: left;
+}
+
+.article-card__title {
+  margin-bottom: 13px;
+  font-size: 32px;
+  line-height: 130%;
+}
+
+.article-card__date,
+.article-card__item {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+  color: #8F8F8F;
+}
+
+.article-card__date {
+  margin-bottom: 40px;
+}
+
+.article-card__community {
+  display: flex;
+  gap: 25px;
+}
+
+.article-card__item {
+  position: relative;
+  padding-left: 25px;
+}
+
+.article-card__item_views::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 20px;
+  height: 15px;
+  background-image: url("../img/views-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.article-card__item_comments::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-image: url("../img/comments-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 1660px) {
+  .article-card {
+    gap: 20px;
+    flex-basis: 500px;
+  }
+
+  .article-card__title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .article-card {
+    flex-basis: 450px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .article-card {
+    flex-basis: 400px;
+  }
+
+  .article-card__title {
+    font-size: 18px;
+  }
+
+  .article-card__date,
+  .article-card__item {
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 960px) {
+  .article-card {
+    flex-basis: 350px;
+  }
+
+  .article-card__title {
+    font-size: 16px;
+  }
+
+  .article-card__date,
+  .article-card__item {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 870px) {
+  .article-card {
+    flex-basis: 300px;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .article-card {
+    flex-basis: auto;
+  }
+}
+
+@media (max-width: 540px) {
+  .article-card__image {
+    max-width: 130px;
+  }
+
+  .article-card__title {
+    margin-bottom: 5px;
+  }
+
+  .article-card__date {
+    margin-bottom: 10px;
+  }
+  
+  .article-card__community {
+    display: flex;
+    gap: 15px;
+  }
+}

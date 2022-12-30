@@ -74,7 +74,6 @@
 
 .header__item {
   position: relative;
-  color: #2D2D2D;
 }
 
 .header__item:nth-child(2)::after {

@@ -1,0 +1,29 @@
+.article-navigation__list {
+  display: flex;
+  gap: 38px;
+}
+
+.article-navigation__item {
+  position: relative;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+  color: #525252;
+}
+
+.article-navigation__item:not(:first-child):before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 6px;
+  width: 6px;
+  height: 9px;
+  background-image: url("../img/page-arrow.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.article-navigation__link {
+  
+}
