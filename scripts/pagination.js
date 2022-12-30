@@ -38,20 +38,11 @@ const getPages = async () => {
   return info.meta.pagination;
 };
 
-const renderNavigation = async () => {
-  const { pages } = await getPages();
-  const btnsGroup = document.querySelector('.navigation__buttons-group');
-  const prevArrow = document.querySelector('.navigation__arrow_prev');
-  const nextArrow = document.querySelector('.navigation__arrow_next');
-
-  const currentPage = Number(window.location.search.replace('?page=', '')) || 1;
-  const previousPage = currentPage - 1;
-  const nextPage = currentPage + 1;
-
+const rendetButtons = (btnsGroup, pages, currentPage, prevArrow, nextArrow) => {
   const btnsValues = {
-    prev: previousPage,
+    prev: currentPage - 1,
     middle: currentPage,
-    next: nextPage
+    next: currentPage + 1
   };
 
   if (btnsValues.prev <= 0) {
@@ -78,9 +69,20 @@ const renderNavigation = async () => {
     btn.textContent = val;
     btnsGroup.append(btn);
   });
+};
 
-  prevArrow.href = `blog.html?page=${previousPage}`;
-  nextArrow.href = `blog.html?page=${nextPage}`;
+const renderNavigation = async () => {
+  const { pages } = await getPages();
+  const btnsGroup = document.querySelector('.navigation__buttons-group');
+  const prevArrow = document.querySelector('.navigation__arrow_prev');
+  const nextArrow = document.querySelector('.navigation__arrow_next');
+
+  const currentPage = Number(window.location.search.replace('?page=', '')) || 1;
+
+  rendetButtons(btnsGroup, pages, currentPage, prevArrow, nextArrow);
+
+  prevArrow.href = `blog.html?page=${currentPage - 1}`;
+  nextArrow.href = `blog.html?page=${currentPage + 1}`;
 };
 
 
