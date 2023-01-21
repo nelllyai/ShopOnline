@@ -1,10 +1,10 @@
-.aside {
+.offer {
   padding-top: 45px;
-  padding-bottom: 90px;
+  padding-bottom: 50px;
   color: white;
 }
 
-.aside__container {
+.offer__container {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 480px repeat(4, 228px);
@@ -17,7 +17,7 @@
   gap: 60px;
 }
 
-.aside__item {
+.offer__item {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -30,76 +30,76 @@
   background-position: top center;
 }
 
-.aside__item_laptops {
+.offer__item_laptops {
   padding: 176px 112px 55px;
   justify-content: space-between;
   grid-area: laptops;
   background-image: url("../img/laptops.jpg");
 }
 
-.aside__item_books {
+.offer__item_books {
   padding: 20px;
   grid-area: books;
   background-image: url("../img/books.jpg");
 }
 
-.aside__item_time {
+.offer__item_time {
   padding: 70px 13px 20px;
   justify-content: flex-start;
   grid-area: time;
   background-image: url("../img/time.jpg");
 }
 
-.aside__item_second-pair {
+.offer__item_second-pair {
   padding: 20px;
   grid-area: second-pair;
   background-image: url("../img/second-pair.jpg");
 }
 
-.aside__item_red-shoes {
+.offer__item_red-shoes {
   grid-area: red-shoes;
   background-image: url("../img/red-shoes.jpg");
 }
 
-.aside__item_ideas {
+.offer__item_ideas {
   padding: 30px;
   grid-area: ideas;
   background-image: url("../img/ideas.jpg");
 }
 
-.aside__item_benefit {
+.offer__item_benefit {
   padding: 0 110px 37px 30px;
   grid-area: benefit;
   background-image: url("../img/benefit.jpg");
 }
 
-.aside__item_decorations {
+.offer__item_decorations {
   padding: 50px;
   grid-area: decorations;
   background-image: url("../img/decorations.jpg");
 }
 
-.aside__item_red-dress {
+.offer__item_red-dress {
   grid-area: red-dress;
   background-image: url("../img/red-dress.jpg");
 }
 
-.aside__item_household-chemicals {
+.offer__item_household-chemicals {
   padding: 20px;
   grid-area: household-chemicals;
   background-image: url("../img/household-chemicals.jpg");
 }
 
-.aside__item_balls {
+.offer__item_balls {
   grid-area: balls;
   background-image: url("../img/balls.jpg");
 }
 
-.aside__item_time::after,
-.aside__item_red-shoes::after,
-.aside__item_benefit::after,
-.aside__item_red-dress::after,
-.aside__item_household-chemicals::after {
+.offer__item_time::after,
+.offer__item_red-shoes::after,
+.offer__item_benefit::after,
+.offer__item_red-dress::after,
+.offer__item_household-chemicals::after {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -113,79 +113,79 @@
   line-height: 130%;
 }
 
-.aside__item_time::after {
+.offer__item_time::after {
   content: "-25%";
 }
 
-.aside__item_red-shoes::after {
+.offer__item_red-shoes::after {
   content: "-40%";
 }
 
-.aside__item_benefit::after {
+.offer__item_benefit::after {
   content: "-15%";
 }
 
-.aside__item_red-dress::after {
+.offer__item_red-dress::after {
   content: "-55%";
 }
 
-.aside__item_household-chemicals::after {
+.offer__item_household-chemicals::after {
   content: "-25%";
 }
 
-.aside__item_time::after,
-.aside__item_benefit::after,
-.aside__item_red-dress::after {
+.offer__item_time::after,
+.offer__item_benefit::after,
+.offer__item_red-dress::after {
   bottom: 20px;
   right: 20px;
 }
 
-.aside__item_red-shoes::after,
-.aside__item_household-chemicals::after {
+.offer__item_red-shoes::after,
+.offer__item_household-chemicals::after {
   top: 20px;
   left: 20px;
 }
 
-.aside__offer {
+.offer__offer {
   font-weight: 700;
   font-size: 40px;
 }
 
-.aside__offer_huge {
+.offer__offer_huge {
   font-size: 70px;
 }
 
-.aside__sale {
+.offer__sale {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 19px;
 }
 
-.aside__offer_small {
+.offer__offer_small {
   font-size: 16px;
 }
 
-.aside__timer {
+.offer__timer {
   width: 473px;
   font-size: 32px;
 }
 
-.aside__thin-text {
+.offer__thin-text {
   font-weight: 400;
   font-size: 30px;
 }
 
-.aside__thin-text_big {
+.offer__thin-text_big {
   font-size: 40px;
 }
 
-.aside__offer_slim,
-.aside__offer_so-slim {
+.offer__offer_slim,
+.offer__offer_so-slim {
   font-size: 30px;
 }
 
-.aside__offer_blue-background {
+.offer__offer_blue-background {
   padding: 16px 26px;
   border-radius: 20px;
   background-color: #38C0EB;
@@ -193,11 +193,11 @@
   line-height: 67px;
 }
 
-.aside__offer_big {
+.offer__offer_big {
   line-height: 130%;
 }
 
-.aside__offer_red-text {
+.offer__offer_red-text {
   padding: 34px 40px;
   max-width: 643px;
   border-radius: 20px;
@@ -209,26 +209,26 @@
 }
 
 @media (max-width: 1800px) {
-  .aside__item_time {
+  .offer__item_time {
     padding-top: 30px;
   }
 
-  .aside__offer_blue-background {
+  .offer__offer_blue-background {
     font-size: 45px;
     line-height: 1.2;
   }
 
-  .aside__thin-text_big {
+  .offer__thin-text_big {
     font-size: 30px;
   }
 }
 
 @media (max-width: 1366px) {
-  .aside {
+  .offer {
     padding-top: 30px;
   }
 
-  .aside__container {
+  .offer__container {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 314px 6px 202px repeat(3, 194px) 10px 418px;
     grid-template-areas:
@@ -243,124 +243,124 @@
     gap: 22px 30px;
   }
 
-  .aside__item {
+  .offer__item {
     border-radius: 16px;
   }
 
-  .aside__item_laptops {
+  .offer__item_laptops {
     padding: 91px 80px 38px;
   }
 
-  .aside__item_books {
+  .offer__item_books {
     padding: 25px 12px;
   }
 
-  .aside__item_time {
+  .offer__item_time {
     padding: 55px 15px;
   }
 
-  .aside__item_second-pair {
+  .offer__item_second-pair {
     padding: 10px;
   }
 
-  .aside__item_ideas {
+  .offer__item_ideas {
     padding: 35px;
   }
 
-  .aside__item_benefit {
+  .offer__item_benefit {
     padding: 0 100px 30px 30px;
   }
 
-  .aside__item_decorations {
+  .offer__item_decorations {
     padding: 38px 30px;
   }
 
-  .aside__item_household-chemicals {
+  .offer__item_household-chemicals {
     padding: 6px 12px;
   }
 
-  .aside__item_time::after,
-  .aside__item_benefit::after,
-  .aside__item_red-dress::after {
+  .offer__item_time::after,
+  .offer__item_benefit::after,
+  .offer__item_red-dress::after {
     bottom: 10px;
     right: 10px;
   }
 
-  .aside__item_red-shoes::after,
-  .aside__item_household-chemicals::after {
+  .offer__item_red-shoes::after,
+  .offer__item_household-chemicals::after {
     top: 10px;
     left: 10px;
   }
 
-  .aside__offer {
+  .offer__offer {
     font-size: 30px;
   }
 
-  .aside__offer_huge {
+  .offer__offer_huge {
     font-size: 40px;
   }
 
-  .aside__sale {
+  .offer__sale {
     gap: 10px;
   }
 
-  .aside__offer_small {
+  .offer__offer_small {
     font-size: 16px;
   }
 
-  .aside__timer {
+  .offer__timer {
     width: 314px;
     font-size: 20px;
   }
 
-  .aside__thin-text {
+  .offer__thin-text {
     font-size: 24px;
     line-height: 31px;
   }
 
-  .aside__thin-text_big {
+  .offer__thin-text_big {
     font-size: 30px;
   }
 
-  .aside__offer_blue-background {
+  .offer__offer_blue-background {
     padding: 28px 42px;
     font-size: 40px;
     line-height: 48px;
   }
 
-  .aside__offer_big {
+  .offer__offer_big {
     font-size: 30px;
   }
 
-  .aside__offer_red-text {
+  .offer__offer_red-text {
     padding: 23px 46px;
     max-width: 513px;
     border-radius: 16px;
     font-size: 30px;
   }
 
-  .aside__offer_slim {
+  .offer__offer_slim {
     font-size: 24px;
   }
 
-  .aside__offer_so-slim {
+  .offer__offer_so-slim {
     font-size: 20px;
   }
 }
 
 @media (max-width: 960px) {
-  .aside__item_time {
+  .offer__item_time {
     padding-top: 30px;
   }
 }
 
 @media (max-width: 768px) {
-  .aside {
+  .offer {
     padding-top: 21px;
     padding-bottom: 65px;
   }
 
-  .aside__container {
+  .offer__container {
     grid-template-columns: repeat(2, minmax(40px, 140px)) minmax(82px, 182px) minmax(78px, 178px);
     grid-template-rows: 280px 0px 130px repeat(3, 126px) 337px;
     grid-template-areas:
@@ -374,90 +374,90 @@
     gap: 20px;
   }
 
-  .aside__item {
+  .offer__item {
     border-radius: 12px;
   }
 
-  .aside__item_laptops {
+  .offer__item_laptops {
     padding: 72px 80px 30px;
   }
 
-  .aside__item_books {
+  .offer__item_books {
     padding: 15px 10px;
   }
 
-  .aside__item_time {
+  .offer__item_time {
     padding-top: 15px;
   }
 
-  .aside__item_second-pair,
-  .aside__item_household-chemicals {
+  .offer__item_second-pair,
+  .offer__item_household-chemicals {
     padding: 10px;
   }
 
-  .aside__item_ideas {
+  .offer__item_ideas {
     padding: 20px 80px 13px 20px;
   }
 
-  .aside__item_benefit {
+  .offer__item_benefit {
     padding: 0 70px 12px 22px;
   }
 
-  .aside__item_decorations {
+  .offer__item_decorations {
     padding: 26px;
   }
 
-  .aside__item_time::after,
-  .aside__item_red-shoes::after,
-  .aside__item_benefit::after,
-  .aside__item_red-dress::after,
-  .aside__item_household-chemicals::after {
+  .offer__item_time::after,
+  .offer__item_red-shoes::after,
+  .offer__item_benefit::after,
+  .offer__item_red-dress::after,
+  .offer__item_household-chemicals::after {
     width: 50px;
     height: 50px;
     font-size: 16px;
   }
 
-  .aside__offer {
+  .offer__offer {
     font-size: 26px;
     line-height: 0.8;
   }
 
-  .aside__offer_huge {
+  .offer__offer_huge {
     font-size: 30px;
   }
 
-  .aside__offer_small {
+  .offer__offer_small {
     font-size: 12px;
   }
 
-  .aside__sale {
+  .offer__sale {
     gap: 13px;
   }
 
-  .aside__timer {
+  .offer__timer {
     width: 229px;
     font-size: 16px;
   }
 
-  .aside__thin-text {
+  .offer__thin-text {
     font-size: 16px;
     line-height: 18px;
   }
 
-  .aside__offer_blue-background {
+  .offer__offer_blue-background {
     padding: 15px 26px;
     font-size: 26px;
     line-height: 28px;
   }
 
-  .aside__offer_big,
-  .aside__offer_slim,
-  .aside__offer_so-slim {
+  .offer__offer_big,
+  .offer__offer_slim,
+  .offer__offer_so-slim {
     font-size: 16px;
     line-height: 120%;
   }
 
-  .aside__offer_red-text {
+  .offer__offer_red-text {
     padding: 22px 33px;
     max-width: 347px;
     font-size: 20px;
@@ -465,12 +465,12 @@
 }
 
 @media (max-width: 540px) {
-  .aside {
+  .offer {
     padding-top: 21px;
     padding-bottom: 45px;
   }
 
-  .aside__container {
+  .offer__container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 340px 8px 120px 8px 118px 8px 206px 8px 118px 8px 118px 8px 95px 94px 8px 123px;
     grid-template-areas:
@@ -493,88 +493,88 @@
     gap: 6px 20px;
   }
 
-  .aside__item {
+  .offer__item {
     border-radius: 8px;
   }
 
-  .aside__item_laptops {
+  .offer__item_laptops {
     padding: 58px 25px 21px;
     align-items: center;
   }
 
-  .aside__item_books {
+  .offer__item_books {
     padding: 0 40px 10px 10px;
   }
 
-  .aside__item_time {
+  .offer__item_time {
     padding: 20px 10px;
   }
 
-  .aside__item_ideas,
-  .aside__item_benefit {
+  .offer__item_ideas,
+  .offer__item_benefit {
     padding: 15px 10px;
   }
 
-  .aside__item_decorations {
+  .offer__item_decorations {
     padding: 11px 15px;
     align-items: center;
   }
 
-  .aside__item_household-chemicals {
+  .offer__item_household-chemicals {
     padding: 8px;
   }
 
-  .aside__item_time::after,
-  .aside__item_benefit::after {
+  .offer__item_time::after,
+  .offer__item_benefit::after {
     bottom: 5px;
     right: 5px;
   }
 
-  .aside__item_red-shoes::after,
-  .aside__item_household-chemicals::after {
+  .offer__item_red-shoes::after,
+  .offer__item_household-chemicals::after {
     top: 5px;
     left: 5px;
   }
 
-  .aside__item_red-dress::after {
+  .offer__item_red-dress::after {
     bottom: 10px;
     right: 10px;
   }
 
-  .aside__offer {
+  .offer__offer {
     font-size: 16px;
   }
 
-  .aside__offer_huge {
+  .offer__offer_huge {
     font-size: 22px;
   }
 
-  .aside__sale {
+  .offer__sale {
     gap: unset;
   }
 
-  .aside__offer_small {
+  .offer__offer_small {
     font-size: 8px;
     line-height: 130%;
   }
 
-  .aside__timer {
+  .offer__timer {
     width: 167px;
     font-size: 12px;
   }
 
-  .aside__offer_big {
+  .offer__offer_big {
     font-size: 12px;
   }
 
-  .aside__thin-text,
-  .aside__offer_slim,
-  .aside__offer_so-slim {
+  .offer__thin-text,
+  .offer__offer_slim,
+  .offer__offer_so-slim {
     font-size: 12px;
     line-height: 14px;
   }
 
-  .aside__offer_blue-background {
+  .offer__offer_blue-background {
     padding: 9px 10px;
     border-radius: 8px;
     font-size: 16px;
@@ -582,7 +582,7 @@
     text-align: center;
   }
 
-  .aside__offer_red-text {
+  .offer__offer_red-text {
     padding: 11px 41px;
     max-width: 250px;
     border-radius: 8px;
