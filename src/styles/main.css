@@ -1,12 +1,10 @@
-.main__container {
-  padding: 185px 245px 150px;
-  margin: 0 auto;
-  max-width: 1920px;
+.main {
+  padding: 40px 0 150px;
 }
 
 .main__list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   margin-bottom: 100px;
   row-gap: 50px;

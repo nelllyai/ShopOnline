@@ -15,7 +15,7 @@ const renderPost = async () => {
   const {title, body, ['user_id']: userId} = await getArticle();
   const {name: author} = await getUser(userId);
 
-  const postNavigation = document.querySelector('.article-navigation__item:last-child');
+  const postNavigation = document.querySelector('.navigation-chain__item:last-child');
   postNavigation.textContent = title;
   
   const postContainer = document.querySelector('.post__container');
