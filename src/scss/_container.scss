@@ -2,22 +2,16 @@
   padding: 0 75px;
   margin: 0 auto;
   max-width: 1920px;
-}
 
-@media (max-width: 1366px) {
-  .container {
-    padding: 0 42px;
+  @include laptop {
+    padding: 0 40px;
   }
-}
 
-@media (max-width: 768px) {
-  .container {
-    padding: 0 34px;
+  @include tablet {
+    padding: 0 35px;
   }
-}
 
-@media (max-width: 540px) {
-  .container {
+  @include phone {
     padding: 0 20px;
   }
 }

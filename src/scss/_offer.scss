@@ -1,4 +1,18 @@
 .offer {
+  @include laptop {
+    padding-top: 30px;
+  }
+
+  @include tablet {
+    padding-top: 21px;
+    padding-bottom: 65px;
+  }
+
+  @include phone {
+    padding-top: 21px;
+    padding-bottom: 45px;
+  }
+
   padding-top: 45px;
   padding-bottom: 50px;
   color: white;
@@ -14,9 +28,73 @@
       "decorations decorations decorations decorations red-dress household-chemicals"
       "decorations decorations decorations decorations red-dress balls";
     gap: 60px;
+
+    @include laptop {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 314px 6px 202px repeat(3, 194px) 10px 418px;
+      grid-template-areas:
+        "laptops laptops laptops laptops"
+        ". . . ."
+        "books time second-pair second-pair"
+        "red-shoes red-shoes second-pair second-pair"
+        "ideas ideas red-dress household-chemicals"
+        "benefit benefit red-dress balls"
+        ". . . ."
+        "decorations decorations decorations decorations";
+      gap: 22px 30px;
+    }
+
+    @include tablet {
+      grid-template-columns: repeat(2, minmax(40px, 140px)) minmax(82px, 182px) minmax(78px, 178px);
+      grid-template-rows: 280px 0px 130px repeat(3, 126px) 337px;
+      grid-template-areas:
+        "laptops laptops laptops laptops"
+        ". . . ."
+        "books time second-pair second-pair"
+        "red-shoes red-shoes second-pair second-pair"
+        "ideas ideas red-dress household-chemicals"
+        "benefit benefit red-dress balls"
+        "decorations decorations decorations decorations";
+      gap: 20px;
+    }
+
+    @include phone {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 340px 8px 120px 8px 118px 8px 206px 8px 118px 8px 118px 8px 95px 94px 8px 123px;
+      grid-template-areas:
+        "laptops laptops"
+        ". ."
+        "books time"
+        ". ."
+        "red-shoes red-shoes"
+        ". ."
+        "second-pair second-pair"
+        ". ."
+        "ideas ideas"
+        ". ."
+        "benefit benefit"
+        ". ."
+        "red-dress household-chemicals"
+        "red-dress balls"
+        ". ."
+        "decorations decorations";
+      gap: 6px 20px;
+    }
   }
 
   &__item {
+    @include laptop {
+      border-radius: 16px;
+    }
+
+    @include tablet {
+      border-radius: 12px;
+    }
+
+    @include phone {
+      border-radius: 8px;
+    }
+
     position: relative;
     display: flex;
     flex-direction: column;
@@ -29,6 +107,19 @@
     background-position: top center;
 
     &_laptops {
+      @include laptop {
+        padding: 91px 80px 38px;
+      }
+
+      @include tablet {
+        padding: 72px 80px 30px;
+      }
+
+      @include phone {
+        padding: 58px 25px 21px;
+        align-items: center;
+      }
+
       padding: 176px 112px 55px;
       justify-content: space-between;
       grid-area: laptops;
@@ -36,68 +127,161 @@
     }
 
     &_books {
+      @include laptop {
+        padding: 25px 12px;
+      }
+
+      @include tablet {
+        padding: 15px 10px;
+      }
+
+      @include phone {
+        padding: 0 40px 10px 10px;
+      }
+
       padding: 20px;
       grid-area: books;
       background-image: url("../img/books.jpg");
     }
-    
+
     &_time {
+      @include break (1800px) {
+        padding-top: 30px;
+      }
+
+      @include laptop {
+        padding: 55px 15px;
+      }
+
+      @include break (960px) {
+        padding-top: 30px;
+      }
+
+      @include tablet {
+        padding-top: 15px;
+      }
+
+      @include phone {
+        padding: 20px 10px;
+      }
+
       padding: 70px 13px 20px;
       justify-content: flex-start;
       grid-area: time;
       background-image: url("../img/time.jpg");
     }
-    
+
+    &_second-pair,
+    &_household-chemicals {
+      @include tablet {
+        padding: 10px;
+      }
+    }
+
     &_second-pair {
+      @include laptop {
+        padding: 10px;
+      }
+
       padding: 20px;
       grid-area: second-pair;
       background-image: url("../img/second-pair.jpg");
     }
-    
+
     &_red-shoes {
       grid-area: red-shoes;
       background-image: url("../img/red-shoes.jpg");
     }
-    
+
+    &_ideas,
+    &_benefit {
+      @include phone {
+        padding: 15px 10px;
+      }
+    }
+
     &_ideas {
+      @include laptop {
+        padding: 35px;
+      }
+
+      @include tablet {
+        padding: 20px 80px 13px 20px;
+      }
+
       padding: 30px;
       grid-area: ideas;
       background-image: url("../img/ideas.jpg");
     }
-    
+
     &_benefit {
+      @include laptop {
+        padding: 0 100px 30px 30px;
+      }
+
+      @include tablet {
+        padding: 0 70px 12px 22px;
+      }
+
       padding: 0 110px 37px 30px;
       grid-area: benefit;
       background-image: url("../img/benefit.jpg");
     }
-    
+
     &_decorations {
+      @include laptop {
+        padding: 38px 30px;
+      }
+
+      @include tablet {
+        padding: 26px;
+      }
+
+      @include phone {
+        padding: 11px 15px;
+        align-items: center;
+      }
+
       padding: 50px;
       grid-area: decorations;
       background-image: url("../img/decorations.jpg");
     }
-    
+
     &_red-dress {
       grid-area: red-dress;
       background-image: url("../img/red-dress.jpg");
     }
-    
+
     &_household-chemicals {
+      @include laptop {
+        padding: 6px 12px;
+      }
+
+      @include phone {
+        padding: 8px;
+      }
+
       padding: 20px;
       grid-area: household-chemicals;
       background-image: url("../img/household-chemicals.jpg");
     }
-    
+
     &_balls {
       grid-area: balls;
       background-image: url("../img/balls.jpg");
     }
-    
+
     &_time::after,
     &_red-shoes::after,
     &_benefit::after,
     &_red-dress::after,
     &_household-chemicals::after {
+      @include tablet {
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+      }
+
       position: absolute;
       display: flex;
       justify-content: center;
@@ -110,59 +294,165 @@
       font-size: 30px;
       line-height: 130%;
     }
-    
+
     &_time::after {
       content: "-25%";
     }
-    
+
     &_red-shoes::after {
       content: "-40%";
     }
-    
+
     &_benefit::after {
       content: "-15%";
     }
-    
+
     &_red-dress::after {
       content: "-55%";
     }
-    
+
     &_household-chemicals::after {
       content: "-25%";
     }
-    
+
     &_time::after,
     &_benefit::after,
     &_red-dress::after {
+      @include laptop {
+        bottom: 10px;
+        right: 10px;
+      }
+
       bottom: 20px;
       right: 20px;
     }
-    
+
+    &_time::after,
+    &_benefit::after {
+      @include phone {
+        bottom: 5px;
+        right: 5px;
+      }
+    }
+
+    &_red-dress::after {
+      @include phone {
+        bottom: 10px;
+        right: 10px;
+      }
+    }
+
     &_red-shoes::after,
     &_household-chemicals::after {
+      @include laptop {
+        top: 10px;
+        left: 10px;
+      }
+
+      @include phone {
+        top: 5px;
+        left: 5px;
+      }
+
       top: 20px;
       left: 20px;
     }
   }
 
-  &__offer {
+  &__main-offer {
+    @include laptop {
+      font-size: 30px;
+    }
+
+    @include tablet {
+      font-size: 26px;
+      line-height: 0.8;
+    }
+
+    @include phone {
+      font-size: 16px;
+    }
+
     font-weight: 700;
     font-size: 40px;
 
     &_huge {
+      @include laptop {
+        font-size: 40px;
+      }
+
+      @include tablet {
+        font-size: 30px;
+      }
+
+      @include phone {
+        font-size: 22px;
+      }
+
       font-size: 70px;
     }
 
     &_small {
+      @include tablet {
+        font-size: 12px;
+      }
+
+      @include phone {
+        font-size: 8px;
+        line-height: 130%;
+      }
+
       font-size: 16px;
     }
 
     &_slim,
     &_so-slim {
+      @include phone {
+        font-size: 12px;
+        line-height: 14px;
+      }
+
       font-size: 30px;
     }
 
+    &_slim {
+      @include laptop {
+        font-size: 24px;
+      }
+    }
+
+    &_so-slim {
+      @include laptop {
+        font-size: 20px;
+      }
+    }
+
     &_blue-background {
+      @include break (1800px) {
+        font-size: 45px;
+        line-height: 1.2;
+      }
+
+      @include laptop {
+        padding: 28px 42px;
+        font-size: 40px;
+        line-height: 48px;
+      }
+
+      @include tablet {
+        padding: 15px 26px;
+        font-size: 26px;
+        line-height: 28px;
+      }
+
+      @include phone {
+        padding: 9px 10px;
+        border-radius: 8px;
+        font-size: 16px;
+        line-height: 18px;
+        text-align: center;
+      }
+
       padding: 16px 26px;
       border-radius: 20px;
       background-color: #38C0EB;
@@ -170,11 +460,48 @@
       line-height: 67px;
     }
 
+    &_big,
+    &_slim,
+    &_so-slim {
+      @include tablet {
+        font-size: 16px;
+        line-height: 120%;
+      }
+    }
+
     &_big {
+      @include laptop {
+        font-size: 30px;
+      }
+
+      @include phone {
+        font-size: 12px;
+      }
+
       line-height: 130%;
     }
 
     &_red-text {
+      @include laptop {
+        padding: 23px 46px;
+        max-width: 513px;
+        border-radius: 16px;
+        font-size: 30px;
+      }
+
+      @include tablet {
+        padding: 22px 33px;
+        max-width: 347px;
+        font-size: 20px;
+      }
+
+      @include phone {
+        padding: 11px 41px;
+        max-width: 250px;
+        border-radius: 8px;
+        font-size: 12px;
+      }
+
       padding: 34px 40px;
       max-width: 643px;
       border-radius: 20px;
@@ -184,9 +511,33 @@
       color: #F91155;
       text-transform: uppercase;
     }
+
+    &__thin-text {
+      @include phone {
+        font-size: 30px;
+      }
+
+      &_big {
+        @include break (1800px) {
+          font-size: 30px;
+        }
+      }
+    }
   }
 
   &__sale {
+    @include laptop {
+      gap: 10px;
+    }
+
+    @include tablet {
+      gap: 13px;
+    }
+
+    @include phone {
+      gap: unset;
+    }
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -194,398 +545,45 @@
   }
 
   &__timer {
+    @include laptop {
+      width: 314px;
+      font-size: 20px;
+    }
+
+    @include tablet {
+      width: 230px;
+      font-size: 16px;
+    }
+
+    @include phone {
+      width: 170px;
+      font-size: 12px;
+    }
+
     width: 473px;
     font-size: 32px;
   }
 
   &__thin-text {
+    @include laptop {
+      font-size: 24px;
+      line-height: 31px;
+    }
+
+    @include tablet {
+      font-size: 16px;
+      line-height: 18px;
+    }
+
     font-weight: 400;
     font-size: 30px;
 
     &_big {
+      @include laptop {
+        font-size: 30px;
+      }
+
       font-size: 40px;
     }
-  }
-}
-
-@media (max-width: 1800px) {
-  .offer__item_time {
-    padding-top: 30px;
-  }
-
-  .offer__offer_blue-background {
-    font-size: 45px;
-    line-height: 1.2;
-  }
-
-  .offer__thin-text_big {
-    font-size: 30px;
-  }
-}
-
-@media (max-width: 1366px) {
-  .offer {
-    padding-top: 30px;
-  }
-
-  .offer__container {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 314px 6px 202px repeat(3, 194px) 10px 418px;
-    grid-template-areas:
-      "laptops laptops laptops laptops"
-      ". . . ."
-      "books time second-pair second-pair"
-      "red-shoes red-shoes second-pair second-pair"
-      "ideas ideas red-dress household-chemicals"
-      "benefit benefit red-dress balls"
-      ". . . ."
-      "decorations decorations decorations decorations";
-    gap: 22px 30px;
-  }
-
-  .offer__item {
-    border-radius: 16px;
-  }
-
-  .offer__item_laptops {
-    padding: 91px 80px 38px;
-  }
-
-  .offer__item_books {
-    padding: 25px 12px;
-  }
-
-  .offer__item_time {
-    padding: 55px 15px;
-  }
-
-  .offer__item_second-pair {
-    padding: 10px;
-  }
-
-  .offer__item_ideas {
-    padding: 35px;
-  }
-
-  .offer__item_benefit {
-    padding: 0 100px 30px 30px;
-  }
-
-  .offer__item_decorations {
-    padding: 38px 30px;
-  }
-
-  .offer__item_household-chemicals {
-    padding: 6px 12px;
-  }
-
-  .offer__item_time::after,
-  .offer__item_benefit::after,
-  .offer__item_red-dress::after {
-    bottom: 10px;
-    right: 10px;
-  }
-
-  .offer__item_red-shoes::after,
-  .offer__item_household-chemicals::after {
-    top: 10px;
-    left: 10px;
-  }
-
-  .offer__offer {
-    font-size: 30px;
-  }
-
-  .offer__offer_huge {
-    font-size: 40px;
-  }
-
-  .offer__sale {
-    gap: 10px;
-  }
-
-  .offer__offer_small {
-    font-size: 16px;
-  }
-
-  .offer__timer {
-    width: 314px;
-    font-size: 20px;
-  }
-
-  .offer__thin-text {
-    font-size: 24px;
-    line-height: 31px;
-  }
-
-  .offer__thin-text_big {
-    font-size: 30px;
-  }
-
-  .offer__offer_blue-background {
-    padding: 28px 42px;
-    font-size: 40px;
-    line-height: 48px;
-  }
-
-  .offer__offer_big {
-    font-size: 30px;
-  }
-
-  .offer__offer_red-text {
-    padding: 23px 46px;
-    max-width: 513px;
-    border-radius: 16px;
-    font-size: 30px;
-  }
-
-  .offer__offer_slim {
-    font-size: 24px;
-  }
-
-  .offer__offer_so-slim {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 960px) {
-  .offer__item_time {
-    padding-top: 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  .offer {
-    padding-top: 21px;
-    padding-bottom: 65px;
-  }
-
-  .offer__container {
-    grid-template-columns: repeat(2, minmax(40px, 140px)) minmax(82px, 182px) minmax(78px, 178px);
-    grid-template-rows: 280px 0px 130px repeat(3, 126px) 337px;
-    grid-template-areas:
-      "laptops laptops laptops laptops"
-      ". . . ."
-      "books time second-pair second-pair"
-      "red-shoes red-shoes second-pair second-pair"
-      "ideas ideas red-dress household-chemicals"
-      "benefit benefit red-dress balls"
-      "decorations decorations decorations decorations";
-    gap: 20px;
-  }
-
-  .offer__item {
-    border-radius: 12px;
-  }
-
-  .offer__item_laptops {
-    padding: 72px 80px 30px;
-  }
-
-  .offer__item_books {
-    padding: 15px 10px;
-  }
-
-  .offer__item_time {
-    padding-top: 15px;
-  }
-
-  .offer__item_second-pair,
-  .offer__item_household-chemicals {
-    padding: 10px;
-  }
-
-  .offer__item_ideas {
-    padding: 20px 80px 13px 20px;
-  }
-
-  .offer__item_benefit {
-    padding: 0 70px 12px 22px;
-  }
-
-  .offer__item_decorations {
-    padding: 26px;
-  }
-
-  .offer__item_time::after,
-  .offer__item_red-shoes::after,
-  .offer__item_benefit::after,
-  .offer__item_red-dress::after,
-  .offer__item_household-chemicals::after {
-    width: 50px;
-    height: 50px;
-    font-size: 16px;
-  }
-
-  .offer__offer {
-    font-size: 26px;
-    line-height: 0.8;
-  }
-
-  .offer__offer_huge {
-    font-size: 30px;
-  }
-
-  .offer__offer_small {
-    font-size: 12px;
-  }
-
-  .offer__sale {
-    gap: 13px;
-  }
-
-  .offer__timer {
-    width: 229px;
-    font-size: 16px;
-  }
-
-  .offer__thin-text {
-    font-size: 16px;
-    line-height: 18px;
-  }
-
-  .offer__offer_blue-background {
-    padding: 15px 26px;
-    font-size: 26px;
-    line-height: 28px;
-  }
-
-  .offer__offer_big,
-  .offer__offer_slim,
-  .offer__offer_so-slim {
-    font-size: 16px;
-    line-height: 120%;
-  }
-
-  .offer__offer_red-text {
-    padding: 22px 33px;
-    max-width: 347px;
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 540px) {
-  .offer {
-    padding-top: 21px;
-    padding-bottom: 45px;
-  }
-
-  .offer__container {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 340px 8px 120px 8px 118px 8px 206px 8px 118px 8px 118px 8px 95px 94px 8px 123px;
-    grid-template-areas:
-      "laptops laptops"
-      ". ."
-      "books time"
-      ". ."
-      "red-shoes red-shoes"
-      ". ."
-      "second-pair second-pair"
-      ". ."
-      "ideas ideas"
-      ". ."
-      "benefit benefit"
-      ". ."
-      "red-dress household-chemicals"
-      "red-dress balls"
-      ". ."
-      "decorations decorations";
-    gap: 6px 20px;
-  }
-
-  .offer__item {
-    border-radius: 8px;
-  }
-
-  .offer__item_laptops {
-    padding: 58px 25px 21px;
-    align-items: center;
-  }
-
-  .offer__item_books {
-    padding: 0 40px 10px 10px;
-  }
-
-  .offer__item_time {
-    padding: 20px 10px;
-  }
-
-  .offer__item_ideas,
-  .offer__item_benefit {
-    padding: 15px 10px;
-  }
-
-  .offer__item_decorations {
-    padding: 11px 15px;
-    align-items: center;
-  }
-
-  .offer__item_household-chemicals {
-    padding: 8px;
-  }
-
-  .offer__item_time::after,
-  .offer__item_benefit::after {
-    bottom: 5px;
-    right: 5px;
-  }
-
-  .offer__item_red-shoes::after,
-  .offer__item_household-chemicals::after {
-    top: 5px;
-    left: 5px;
-  }
-
-  .offer__item_red-dress::after {
-    bottom: 10px;
-    right: 10px;
-  }
-
-  .offer__offer {
-    font-size: 16px;
-  }
-
-  .offer__offer_huge {
-    font-size: 22px;
-  }
-
-  .offer__sale {
-    gap: unset;
-  }
-
-  .offer__offer_small {
-    font-size: 8px;
-    line-height: 130%;
-  }
-
-  .offer__timer {
-    width: 167px;
-    font-size: 12px;
-  }
-
-  .offer__offer_big {
-    font-size: 12px;
-  }
-
-  .offer__thin-text,
-  .offer__offer_slim,
-  .offer__offer_so-slim {
-    font-size: 12px;
-    line-height: 14px;
-  }
-
-  .offer__offer_blue-background {
-    padding: 9px 10px;
-    border-radius: 8px;
-    font-size: 16px;
-    line-height: 18px;
-    text-align: center;
-  }
-
-  .offer__offer_red-text {
-    padding: 11px 41px;
-    max-width: 250px;
-    border-radius: 8px;
-    font-size: 12px;
   }
 }

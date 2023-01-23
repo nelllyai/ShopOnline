@@ -7,48 +7,44 @@
     margin-bottom: 20px;
     font-weight: 700;
     font-size: 16px;
+
+    @include tablet {
+      .timer__title {
+        font-size: 12px;
+      }
+    
+      .timer__counter {
+        font-size: 30px;
+      }
+    }
+
+    @include phone {
+      margin-bottom: 0;
+      font-size: 8px;
+    }
   }
-  
+
   &__list {
     display: flex;
     justify-content: space-between;
     gap: 15px;
   }
-  
+
   &__item {
     display: flex;
     align-items: center;
     gap: 15px;
   }
-  
+
   &__counter {
     font-size: 60px;
-  }
-}
 
-@media (max-width: 1366px) {
-  .timer__counter {
-    font-size: 40px;
-  }
-}
+    @include laptop {
+      font-size: 40px;
+    }
 
-@media (max-width: 768px) {
-  .timer__title {
-    font-size: 12px;
-  }
-  
-  .timer__counter {
-    font-size: 30px;
-  }
-}
-
-@media (max-width: 540px) {
-  .timer__title {
-    margin-bottom: 0;
-    font-size: 8px;
-  }
-
-  .timer__counter {
-    font-size: 20px;
+    @include phone {
+      font-size: 20px;
+    }
   }
 }

@@ -1,43 +1,43 @@
-.advertisement__item {
-  display: flex;
-  flex-direction: column;
-  padding: 45px 30px;
-  justify-content: flex-end;
-  width: 532px;
-  height: 328px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.advertisement {
+  &__item {
+    display: flex;
+    flex-direction: column;
+    padding: 45px 30px;
+    justify-content: flex-end;
+    width: 532px;
+    height: 328px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  
+    &_tour {
+      background-image: url("../img/advertisement-1.jpg");
+    }
+  
+    &_car {
+      background-image: url("../img/advertisement-2.jpg");
+    }
 
-  &:not(:last-child) {
-    margin-bottom: 50px;
+    @include laptop {
+      width: 320px;
+    }
   }
-
-  &_tour {
-    background-image: url("../img/advertisement-1.jpg");
+  
+  &__title,
+  &__info {
+    color: white;
+    line-height: 130%;
   }
-
-  &_car {
-    background-image: url("../img/advertisement-2.jpg");
+  
+  &__title {
+    font-size: 32px;
   }
-}
-
-.advertisement__title,
-.advertisement__info {
-  color: white;
-  line-height: 130%;
-}
-
-.advertisement__title {
-  font-size: 32px;
-}
-
-.advertisement__info {
-  font-size: 16px;
-}
-
-@media (max-width: 1366px) {
-  .advertisement__item {
-    width: 320px;
+  
+  &__info {
+    font-size: 16px;
   }
 }

@@ -1,0 +1,34 @@
+@mixin font($name, $weight) {
+  font: {
+    family: $name;
+    weight: $weight;
+    display: swap;
+  }
+
+  src: url("../fonts/#{$name}-#{$weight}.woff2") format("woff2"),
+  url("../fonts/#{$name}-#{$weight}.woff") format("woff");
+}
+
+@mixin break($point) {
+  @media(max-width: $point) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: 1366px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: 540px) {
+    @content;
+  }
+}

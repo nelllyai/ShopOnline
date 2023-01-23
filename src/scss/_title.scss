@@ -9,18 +9,14 @@
   &__focus {
     color: #3670C7;
   }
-}
 
-@media (max-width: 768px) {
-  .title {
+  @include tablet {
     font-size: 26px;
     line-height: 35px;
     letter-spacing: 0.06em;
   }
-}
 
-@media (max-width: 540px) {
-  .title {
+  @include phone {
     font-size: 18px;
     line-height: 25px;
   }
