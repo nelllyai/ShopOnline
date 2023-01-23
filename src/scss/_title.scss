@@ -5,10 +5,10 @@
   line-height: 41px;
   letter-spacing: 0.06em;
   color: #2D2D2D;
-}
 
-.title__focus {
-  color: #3670C7;
+  &__focus {
+    color: #3670C7;
+  }
 }
 
 @media (max-width: 768px) {

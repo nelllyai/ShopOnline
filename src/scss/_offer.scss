@@ -2,210 +2,210 @@
   padding-top: 45px;
   padding-bottom: 50px;
   color: white;
-}
 
-.offer__container {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 480px repeat(4, 228px);
-  grid-template-areas:
-    "laptops laptops laptops laptops laptops laptops"
-    "books time second-pair second-pair ideas ideas"
-    "red-shoes red-shoes second-pair second-pair benefit benefit"
-    "decorations decorations decorations decorations red-dress household-chemicals"
-    "decorations decorations decorations decorations red-dress balls";
-  gap: 60px;
-}
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 480px repeat(4, 228px);
+    grid-template-areas:
+      "laptops laptops laptops laptops laptops laptops"
+      "books time second-pair second-pair ideas ideas"
+      "red-shoes red-shoes second-pair second-pair benefit benefit"
+      "decorations decorations decorations decorations red-dress household-chemicals"
+      "decorations decorations decorations decorations red-dress balls";
+    gap: 60px;
+  }
 
-.offer__item {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
-}
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
 
-.offer__item_laptops {
-  padding: 176px 112px 55px;
-  justify-content: space-between;
-  grid-area: laptops;
-  background-image: url("../img/laptops.jpg");
-}
+    &_laptops {
+      padding: 176px 112px 55px;
+      justify-content: space-between;
+      grid-area: laptops;
+      background-image: url("../img/laptops.jpg");
+    }
 
-.offer__item_books {
-  padding: 20px;
-  grid-area: books;
-  background-image: url("../img/books.jpg");
-}
+    &_books {
+      padding: 20px;
+      grid-area: books;
+      background-image: url("../img/books.jpg");
+    }
+    
+    &_time {
+      padding: 70px 13px 20px;
+      justify-content: flex-start;
+      grid-area: time;
+      background-image: url("../img/time.jpg");
+    }
+    
+    &_second-pair {
+      padding: 20px;
+      grid-area: second-pair;
+      background-image: url("../img/second-pair.jpg");
+    }
+    
+    &_red-shoes {
+      grid-area: red-shoes;
+      background-image: url("../img/red-shoes.jpg");
+    }
+    
+    &_ideas {
+      padding: 30px;
+      grid-area: ideas;
+      background-image: url("../img/ideas.jpg");
+    }
+    
+    &_benefit {
+      padding: 0 110px 37px 30px;
+      grid-area: benefit;
+      background-image: url("../img/benefit.jpg");
+    }
+    
+    &_decorations {
+      padding: 50px;
+      grid-area: decorations;
+      background-image: url("../img/decorations.jpg");
+    }
+    
+    &_red-dress {
+      grid-area: red-dress;
+      background-image: url("../img/red-dress.jpg");
+    }
+    
+    &_household-chemicals {
+      padding: 20px;
+      grid-area: household-chemicals;
+      background-image: url("../img/household-chemicals.jpg");
+    }
+    
+    &_balls {
+      grid-area: balls;
+      background-image: url("../img/balls.jpg");
+    }
+    
+    &_time::after,
+    &_red-shoes::after,
+    &_benefit::after,
+    &_red-dress::after,
+    &_household-chemicals::after {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: #FFBD13;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 130%;
+    }
+    
+    &_time::after {
+      content: "-25%";
+    }
+    
+    &_red-shoes::after {
+      content: "-40%";
+    }
+    
+    &_benefit::after {
+      content: "-15%";
+    }
+    
+    &_red-dress::after {
+      content: "-55%";
+    }
+    
+    &_household-chemicals::after {
+      content: "-25%";
+    }
+    
+    &_time::after,
+    &_benefit::after,
+    &_red-dress::after {
+      bottom: 20px;
+      right: 20px;
+    }
+    
+    &_red-shoes::after,
+    &_household-chemicals::after {
+      top: 20px;
+      left: 20px;
+    }
+  }
 
-.offer__item_time {
-  padding: 70px 13px 20px;
-  justify-content: flex-start;
-  grid-area: time;
-  background-image: url("../img/time.jpg");
-}
+  &__offer {
+    font-weight: 700;
+    font-size: 40px;
 
-.offer__item_second-pair {
-  padding: 20px;
-  grid-area: second-pair;
-  background-image: url("../img/second-pair.jpg");
-}
+    &_huge {
+      font-size: 70px;
+    }
 
-.offer__item_red-shoes {
-  grid-area: red-shoes;
-  background-image: url("../img/red-shoes.jpg");
-}
+    &_small {
+      font-size: 16px;
+    }
 
-.offer__item_ideas {
-  padding: 30px;
-  grid-area: ideas;
-  background-image: url("../img/ideas.jpg");
-}
+    &_slim,
+    &_so-slim {
+      font-size: 30px;
+    }
 
-.offer__item_benefit {
-  padding: 0 110px 37px 30px;
-  grid-area: benefit;
-  background-image: url("../img/benefit.jpg");
-}
+    &_blue-background {
+      padding: 16px 26px;
+      border-radius: 20px;
+      background-color: #38C0EB;
+      font-size: 56px;
+      line-height: 67px;
+    }
 
-.offer__item_decorations {
-  padding: 50px;
-  grid-area: decorations;
-  background-image: url("../img/decorations.jpg");
-}
+    &_big {
+      line-height: 130%;
+    }
 
-.offer__item_red-dress {
-  grid-area: red-dress;
-  background-image: url("../img/red-dress.jpg");
-}
+    &_red-text {
+      padding: 34px 40px;
+      max-width: 643px;
+      border-radius: 20px;
+      background-color: #fff;
+      font-weight: 700;
+      font-size: 40px;
+      color: #F91155;
+      text-transform: uppercase;
+    }
+  }
 
-.offer__item_household-chemicals {
-  padding: 20px;
-  grid-area: household-chemicals;
-  background-image: url("../img/household-chemicals.jpg");
-}
+  &__sale {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 19px;
+  }
 
-.offer__item_balls {
-  grid-area: balls;
-  background-image: url("../img/balls.jpg");
-}
+  &__timer {
+    width: 473px;
+    font-size: 32px;
+  }
 
-.offer__item_time::after,
-.offer__item_red-shoes::after,
-.offer__item_benefit::after,
-.offer__item_red-dress::after,
-.offer__item_household-chemicals::after {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 88px;
-  height: 88px;
-  border-radius: 50%;
-  background: #FFBD13;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 130%;
-}
+  &__thin-text {
+    font-weight: 400;
+    font-size: 30px;
 
-.offer__item_time::after {
-  content: "-25%";
-}
-
-.offer__item_red-shoes::after {
-  content: "-40%";
-}
-
-.offer__item_benefit::after {
-  content: "-15%";
-}
-
-.offer__item_red-dress::after {
-  content: "-55%";
-}
-
-.offer__item_household-chemicals::after {
-  content: "-25%";
-}
-
-.offer__item_time::after,
-.offer__item_benefit::after,
-.offer__item_red-dress::after {
-  bottom: 20px;
-  right: 20px;
-}
-
-.offer__item_red-shoes::after,
-.offer__item_household-chemicals::after {
-  top: 20px;
-  left: 20px;
-}
-
-.offer__offer {
-  font-weight: 700;
-  font-size: 40px;
-}
-
-.offer__offer_huge {
-  font-size: 70px;
-}
-
-.offer__sale {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 19px;
-}
-
-.offer__offer_small {
-  font-size: 16px;
-}
-
-.offer__timer {
-  width: 473px;
-  font-size: 32px;
-}
-
-.offer__thin-text {
-  font-weight: 400;
-  font-size: 30px;
-}
-
-.offer__thin-text_big {
-  font-size: 40px;
-}
-
-.offer__offer_slim,
-.offer__offer_so-slim {
-  font-size: 30px;
-}
-
-.offer__offer_blue-background {
-  padding: 16px 26px;
-  border-radius: 20px;
-  background-color: #38C0EB;
-  font-size: 56px;
-  line-height: 67px;
-}
-
-.offer__offer_big {
-  line-height: 130%;
-}
-
-.offer__offer_red-text {
-  padding: 34px 40px;
-  max-width: 643px;
-  border-radius: 20px;
-  background-color: #fff;
-  font-weight: 700;
-  font-size: 40px;
-  color: #F91155;
-  text-transform: uppercase;
+    &_big {
+      font-size: 40px;
+    }
+  }
 }
 
 @media (max-width: 1800px) {

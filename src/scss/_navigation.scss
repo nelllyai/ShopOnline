@@ -1,0 +1,34 @@
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+
+  &__arrow {
+    color: #3670C7;
+
+    &_disabled {
+      color: #8F8F8F;
+      pointer-events: none;
+    }
+  }
+
+  &__buttons-group {
+    display: flex;
+    gap: 6px;
+  }
+
+  &__button {
+    padding: 8px 13px;
+    border: 2px solid #2D2D2D;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+
+    &_active {
+      border-color: #3670C7;
+      color: #3670C7;
+      pointer-events: none;
+    }
+  }
+}

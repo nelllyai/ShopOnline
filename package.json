@@ -1,7 +1,7 @@
 {
-  "name": "gulp-project",
+  "name": "online-shop",
   "version": "1.0.0",
-  "description": "start gulp",
+  "description": "start scss",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -13,6 +13,8 @@
     "browser-sync": "^2.27.11",
     "del": "^7.0.0",
     "gulp": "^4.0.2",
-    "gulp-cssimport": "^7.0.0"
+    "gulp-cssimport": "^7.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.57.1"
   }
 }

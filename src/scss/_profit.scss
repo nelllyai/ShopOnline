@@ -1,0 +1,61 @@
+.profit {
+  padding-top: 50px;
+  padding-bottom: 137px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 50px 20px;
+  }
+  
+  &__image-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+  
+  }
+  
+  &__image {
+    object-fit: contain;
+  }
+  
+  &__discount {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 20px;
+    left: 20px;
+    height: 88px;
+    width: 88px;
+    border-radius: 50%;
+    background-color: #FFBD13;
+    color: white;
+  }
+  
+  &__price {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 25px;
+  }
+  
+  &__new-price {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+  }
+  
+  &__old-price {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-decoration-line: line-through;
+  }
+  
+  &__product {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 150%;
+  }
+}

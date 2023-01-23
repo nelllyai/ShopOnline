@@ -3,66 +3,66 @@
   align-items: center;
   gap: 30px;
   flex-basis: 645px;
-}
 
-.article-card__image {
-  float: left;
-}
+  &__image {
+    float: left;
+  }
 
-.article-card__title {
-  display: -webkit-box;
-  margin-bottom: 13px;
-  font-size: 32px;
-  line-height: 130%;
-  max-height: 100px;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+  &__title {
+    display: -webkit-box;
+    margin-bottom: 13px;
+    font-size: 32px;
+    line-height: 130%;
+    max-height: 100px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 
-.article-card__date,
-.article-card__item {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 130%;
-  color: #8F8F8F;
-}
+  &__date,
+  &__item {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    color: #8F8F8F;
+  }
 
-.article-card__date {
-  margin-bottom: 40px;
-}
+  &__date {
+    margin-bottom: 40px;
+  }
 
-.article-card__community {
-  display: flex;
-  gap: 25px;
-}
+  &__community {
+    display: flex;
+    gap: 25px;
+  }
 
-.article-card__item {
-  position: relative;
-  padding-left: 25px;
-}
+  &__item {
+    position: relative;
+    padding-left: 25px;
 
-.article-card__item_views::before {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 0;
-  width: 20px;
-  height: 15px;
-  background-image: url("../img/views-icon.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-}
+    &_views::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 0;
+      width: 20px;
+      height: 15px;
+      background-image: url("../img/views-icon.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
 
-.article-card__item_comments::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  background-image: url("../img/comments-icon.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
+    &_comments::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background-image: url("../img/comments-icon.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
 }
 
 @media (max-width: 1660px) {

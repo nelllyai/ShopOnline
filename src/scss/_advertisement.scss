@@ -8,18 +8,18 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
 
-.advertisement__item:not(:last-child) {
-  margin-bottom: 50px;
-}
+  &:not(:last-child) {
+    margin-bottom: 50px;
+  }
 
-.advertisement__item_tour {
-  background-image: url("../img/advertisement-1.jpg");
-}
+  &_tour {
+    background-image: url("../img/advertisement-1.jpg");
+  }
 
-.advertisement__item_car {
-  background-image: url("../img/advertisement-2.jpg");
+  &_car {
+    background-image: url("../img/advertisement-2.jpg");
+  }
 }
 
 .advertisement__title,
