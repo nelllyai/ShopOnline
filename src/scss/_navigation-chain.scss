@@ -1,17 +1,31 @@
 .navigation-chain {
-  width: 800px;
-
+  @include phone {
+    padding-top: 15px;
+  }
+  
   &__list {
     display: flex;
     gap: 38px;
+
+    @include phone {
+      gap: 23px;
+    }
   }
 
   &__item {
+    @include tablet {
+      font-size: 14px;
+    }
+
+    @include phone {
+      font-size: 8px;
+    }
+
     position: relative;
     font-weight: 700;
     font-size: 16px;
     line-height: 130%;
-    color: #525252;
+    color: $main-gray--dark;
 
     &:not(:first-child):before {
       content: "";
@@ -24,6 +38,13 @@
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
+
+      @include phone {
+        left: -12px;
+        top: 1px;
+        width: 3px;
+        height: 6px;
+      }
     }
   }
 }

@@ -1,26 +1,104 @@
 .footer {
-  background-color: #2D2D2D;
-  color: white;
+  background-color: $text-color;
+  color: $white;
 
   &__container {
     padding-top: 80px;
     padding-bottom: 180px;
+
+    @include laptop {
+      padding-top: 60px;
+      padding-bottom: 45px;
+    }
+
+    @include break(680px) {
+      padding-top: 30px;
+      padding-bottom: 20px;
+    }
   }
 
   &__columns {
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
+
+    @include laptop {
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+
+    @include break(680px) {
+      flex-direction: column;
+      gap: 30px;
+    }
   }
 
   &__title {
-    color: white;
+    color: $white;
+    
+    @include laptop {
+      margin-bottom: 60px;
+      flex-basis: 100%;
+    }
+
+    @include break(980px) {
+      margin-bottom: 40px;
+      font-size: 24px;
+      line-height: 33px;
+    }
+
+    @include break(680px) {
+      margin-bottom: 28px;
+      font-size: 20px;
+      line-height: 27px;
+    }
+  }
+
+  &__info-wrapper {
+    @include break(680px) {
+      display: flex;
+      gap: 12px;
+    }
   }
 
   &__subtitle {
     margin-bottom: 40px;
     font-size: 32px;
     line-height: 130%;
+
+    @include laptop {
+      margin-bottom: 35px;
+    }
+
+    @include break(980px) {
+      font-size: 26px;
+    }
+
+    @include break(680px) {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+  }
+
+  &__button {
+    @include break(680px) {
+      display: block;
+      position: relative;
+      top: 9px;
+      width: 17px;
+      height: 8px;
+      font-size: 0;
+      background-image: url("../img/arrow-list-down.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    &_active {
+      background-image: url("../img/arrow-list-up.svg");
+    }
+
+    display: none;
   }
 
   &__list {
@@ -33,6 +111,26 @@
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(5, 1fr);
       column-gap: 30px;
+
+      @include laptop {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+
+    &_cover {
+      @include break(680px) {
+        height: 0;
+        overflow: hidden;
+        transition: height .3s ease-in-out;
+      }
+    }
+
+    &_active {
+      @include break(680px) {
+        height: auto;
+      }
     }
   }
 
@@ -48,6 +146,23 @@
 
     &_margin {
       margin-bottom: 40px;
+
+      @include break(980px) {
+        margin-bottom: 30px;
+      }
+
+      @include break(680px) {
+        margin-bottom: 25px;
+      }
+    }
+
+    @include break(980px) {
+      font-size: 16px;
+    }
+
+    @include break(680px) {
+      font-size: 12px;
+      line-height: 120%;
     }
   }
 
@@ -56,6 +171,14 @@
     justify-content: space-between;
     font-size: 16px;
     line-height: 130%;
+
+    @include break(980px) {
+      font-size: 12px;
+    }
+
+    @include break(680px) {
+      font-size: 10px;
+    }
   }
   
   &__design-author {

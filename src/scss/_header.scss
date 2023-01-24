@@ -45,7 +45,7 @@
     font-weight: 400;
     font-size: 22px;
     line-height: 150%;
-    color: #fff;
+    color: $white;
 
     &::before {
       content: "";
@@ -139,7 +139,7 @@
     right: 0;
     max-height: 54px;
     border-radius: 30px;
-    color: #fff;
+    color: $white;
 
     @include tablet {
       padding: 4px 30px;
@@ -195,11 +195,11 @@
       width: 14px;
       height: 18px;
       border-radius: 50%;
-      background-color: #fff;
+      background-color: $white;
       font-weight: 700;
       font-size: 14px;
       line-height: 130%;
-      color: #3670C7;
+      color: $main-blue;
 
       @include laptop {
         right: 10px;
@@ -276,6 +276,6 @@
   }
 
   @include phone {
-    padding: 13px 0 21px;
+    padding: 15px 0;
   }
 }

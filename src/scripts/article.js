@@ -1,3 +1,5 @@
+'use strict';
+
 const getArticle = async () => {
   const id = window.location.search.replace('?id=', '');
   const result = await fetch(`https://gorest.co.in/public-api/posts/${id}`);

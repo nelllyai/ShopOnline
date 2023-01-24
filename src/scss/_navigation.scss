@@ -1,13 +1,18 @@
 .navigation {
+  @include tablet {
+    gap: 20px;
+  }
+
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 35px;
 
   &__arrow {
-    color: #3670C7;
+    color: $main-blue;
 
     &_disabled {
-      color: #8F8F8F;
+      color: $text-color;
       pointer-events: none;
     }
   }
@@ -15,19 +20,33 @@
   &__buttons-group {
     display: flex;
     gap: 6px;
+
+    @include tablet {
+      gap: 10px;
+    }
   }
 
   &__button {
+    @include tablet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2px 8px;
+      font-size: 12px;
+      width: 20px;
+      height: 20px;
+    }
+
     padding: 8px 13px;
-    border: 2px solid #2D2D2D;
+    border: 2px solid $text-color;
     border-radius: 4px;
     font-weight: 700;
     font-size: 16px;
     line-height: 130%;
 
     &_active {
-      border-color: #3670C7;
-      color: #3670C7;
+      border-color: $main-blue;
+      color: $main-blue;
       pointer-events: none;
     }
   }

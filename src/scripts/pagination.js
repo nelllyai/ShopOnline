@@ -1,3 +1,5 @@
+'use strict';
+
 const getArticles = async () => {
   const page = window.location.search;
   const result = await fetch(`https://gorest.co.in/public-api/posts${page}`);
@@ -19,11 +21,13 @@ const renderArticles = async () => {
       <img class="article-card__image" src="img/test.png" alt="Превью статьи">
       <div class="article-card__info">
         <h2 class="article-card__title">${title}</h2>
-        <p class="article-card__date">22 октября 2021, 12:45</p>
-        <ul class="article-card__community">
-          <li class="article-card__item article-card__item_views">1.2K</li>
-          <li class="article-card__item article-card__item_comments">0</li>
-        </ul>
+        <div class="article-card__wrapper">
+          <p class="article-card__date">22 октября 2021, 12:45</p>
+          <ul class="article-card__community">
+            <li class="article-card__item article-card__item_views">1.2K</li>
+            <li class="article-card__item article-card__item_comments">0</li>
+          </ul>
+        </div>
       </div>
     `;
     return card;

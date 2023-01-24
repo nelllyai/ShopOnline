@@ -2,23 +2,58 @@
   padding-top: 50px;
   padding-bottom: 137px;
 
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 50px 20px;
+  @include laptop {
+    padding-top: 45px;
+    padding-bottom: 100px;
   }
-  
+
+  @include tablet {
+    padding-top: 30px;
+    padding-bottom: 80px;
+  }
+
+  @include phone {
+    padding-top: 35px;
+    padding-bottom: 70px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 45px 30px;
+
+    @include laptop {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 50px 20px;
+    }
+
+    @include tablet {
+      gap: 40px 20px;
+    }
+
+    @include phone {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px 20px;
+    }
+  }
+
   &__image-wrapper {
     position: relative;
     margin-bottom: 20px;
-  
+
+    @include tablet {
+      margin-bottom: 15px;
+    }
+
+    @include phone {
+      margin-bottom: 10px;
+    }
   }
-  
+
   &__image {
     object-fit: contain;
   }
-  
+
   &__discount {
     position: absolute;
     display: flex;
@@ -30,32 +65,75 @@
     width: 88px;
     border-radius: 50%;
     background-color: #FFBD13;
-    color: white;
+    color: $white;
+
+    @include tablet {
+      left: 10px;
+      width: 60px;
+      height: 60px;
+      font-size: 20px;
+    }
+
+    @include phone {
+      left: 5px;
+      bottom: 15px;
+      width: 40px;
+      height: 40px;
+      font-size: 12px;
+    }
   }
-  
+
   &__price {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
     gap: 25px;
   }
-  
+
   &__new-price {
     font-weight: 700;
     font-size: 28px;
     line-height: 34px;
+
+    @include tablet {
+      font-size: 22px;
+      line-height: 26px;
+    }
+
+    @include phone {
+      font-size: 16px;
+      line-height: 19px;
+    }
   }
-  
+
   &__old-price {
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
     text-decoration-line: line-through;
+
+    @include tablet {
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    @include phone {
+      font-size: 12px;
+      line-height: 14px;
+    }
   }
-  
+
   &__product {
     font-weight: 400;
     font-size: 22px;
     line-height: 150%;
+
+    @include tablet {
+      font-size: 18px;
+    }
+
+    @include phone {
+      font-size: 12px;
+    }
   }
 }

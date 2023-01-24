@@ -9,6 +9,7 @@
 
   <link rel="stylesheet" href="css/index.css">
   <script defer src="scripts/timer.js"></script>
+  <script defer src="scripts/accordion.js"></script>
 </head>
 
 <body>
@@ -76,7 +77,7 @@
         <div class="offer__item offer__item_laptops">
           <p class="offer__main-offer offer__main-offer_huge">-50% на все ноутбуки</p>
           <div class="offer__sale">
-            <div class="offer__timer" data-timer-deadline="30 December 2022 15:30"></div>
+            <div class="offer__timer" data-timer-deadline="14 February 2023 15:30"></div>
           </div>
         </div>
 
@@ -91,8 +92,8 @@
         </div>
 
         <div class="offer__item offer__item_second-pair">
-          <p class="offer__main-offer offer__main-offer_blue-background">
-            <span class="offer__thin-text offer__thin-text_big">Вторая пара кроссовок</span> в&nbsp;подарок!
+          <p class="offer__main-offer offer__thin-text offer__main-offer_blue-background">
+            Вторая пара кроссовок <span class="offer__thin-text_big">в&nbsp;подарок!</span>
           </p>
         </div>
 
@@ -263,9 +264,12 @@
         <p class="title footer__title">Shop<span class="title__focus">Online</span></p>
 
         <nav class="footer__section footer__navigation footer__section_catalog">
-          <h3 class="footer__subtitle">Каталог</h3>
+          <div class="footer__info-wrapper">
+            <h3 class="footer__subtitle">Каталог</h3>
+            <button class="footer__button">Развернуть</button>
+          </div>
 
-          <ul class="footer__list footer__list_two-cols">
+          <ul class="footer__list footer__list_cover footer__list_two-cols">
             <li class="footer__item">
               <a href="#" class="footer__link">Смартфоны</a>
             </li>
@@ -300,9 +304,12 @@
         </nav>
 
         <nav class="footer__section footer__navigation footer__section_to-customers">
-          <h3 class="footer__subtitle">Покупателям</h3>
+          <div class="footer__info-wrapper">
+            <h3 class="footer__subtitle">Покупателям</h3>
+            <button class="footer__button">Развернуть</button>
+          </div>
 
-          <ul class="footer__list">
+          <ul class="footer__list footer__list_cover">
             <li class="footer__item">
               <a href="#" class="footer__link">Оплата заказа</a>
             </li>

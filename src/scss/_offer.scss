@@ -15,7 +15,7 @@
 
   padding-top: 45px;
   padding-bottom: 50px;
-  color: white;
+  color: $white;
 
   &__container {
     display: grid;
@@ -474,6 +474,11 @@
         font-size: 30px;
       }
 
+      @include tablet {
+        font-size: 16px;
+        line-height: 120%;
+      }
+
       @include phone {
         font-size: 12px;
       }
@@ -505,23 +510,11 @@
       padding: 34px 40px;
       max-width: 643px;
       border-radius: 20px;
-      background-color: #fff;
+      background-color: $white;
       font-weight: 700;
       font-size: 40px;
-      color: #F91155;
+      color: $attention;
       text-transform: uppercase;
-    }
-
-    &__thin-text {
-      @include phone {
-        font-size: 30px;
-      }
-
-      &_big {
-        @include break (1800px) {
-          font-size: 30px;
-        }
-      }
     }
   }
 
@@ -575,6 +568,11 @@
       line-height: 18px;
     }
 
+    @include phone {
+      font-size: 12px;
+      line-height: 14px;
+    }
+
     font-weight: 400;
     font-size: 30px;
 
@@ -583,7 +581,18 @@
         font-size: 30px;
       }
 
+      @include tablet {
+        font-size: 26px;
+        line-height: 29px;
+      }
+
+      @include phone {
+        font-size: 16px;
+        line-height: 18px;
+      }
+
       font-size: 40px;
+      font-weight: 700;
     }
   }
 }

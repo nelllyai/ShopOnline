@@ -4,10 +4,10 @@
   font-size: 30px;
   line-height: 41px;
   letter-spacing: 0.06em;
-  color: #2D2D2D;
+  color: $text-color;
 
   &__focus {
-    color: #3670C7;
+    color: $main-blue;
   }
 
   @include tablet {
