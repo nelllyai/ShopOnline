@@ -260,7 +260,7 @@
       @include phone {
         padding: 8px;
       }
-
+      
       padding: 20px;
       grid-area: household-chemicals;
       background-image: url("../img/household-chemicals.jpg");
@@ -415,18 +415,6 @@
       font-size: 30px;
     }
 
-    &_slim {
-      @include laptop {
-        font-size: 24px;
-      }
-    }
-
-    &_so-slim {
-      @include laptop {
-        font-size: 20px;
-      }
-    }
-
     &_blue-background {
       @include break (1800px) {
         font-size: 45px;
@@ -466,6 +454,26 @@
       @include tablet {
         font-size: 16px;
         line-height: 120%;
+      }
+    }
+
+    &_slim {
+      @include laptop {
+        font-size: 24px;
+      }
+
+      @include phone {
+        font-size: 12px;
+      }
+    }
+
+    &_so-slim {
+      @include laptop {
+        font-size: 20px;
+      }
+
+      @include phone {
+        font-size: 12px;
       }
     }
 
