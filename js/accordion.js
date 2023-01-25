@@ -1,0 +1,1 @@
+"use strict";var items=document.querySelectorAll(".footer__list_cover"),buttons=document.querySelectorAll(".footer__button");buttons.forEach((function(t,e){t.addEventListener("click",(function(){t.classList.toggle("footer__button_active");for(var o=0;o<items.length;o++)e===o&&items[o].classList.toggle("footer__list_active")}))}));
