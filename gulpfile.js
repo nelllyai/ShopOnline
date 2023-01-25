@@ -16,6 +16,7 @@ import { stream as critical } from 'critical';
 import gulpif from 'gulp-if';
 import autoprefixer from 'gulp-autoprefixer';
 import babel from 'gulp-babel';
+import ghPages from 'gulp-gh-pages';
 
 const prepros = true;
 let dev = false;
@@ -155,4 +156,9 @@ export const base = gulp.parallel(html, style, js, img, avif, webp, copy);
 
 export const build = gulp.series(clear, base, critCss);
 
-export default gulp.series(develop, base, server); 
+export default gulp.series(develop, base, server);
+
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});
