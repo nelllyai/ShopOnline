@@ -7,6 +7,8 @@
   <title>Блог</title>
   <link rel="stylesheet" href="css/blog.css">
   <script defer src="js/pagination.js"></script>
+  <script defer src="js/accordion.js"></script>
+  <script defer src="js/menu.js"></script>
 </head>
 
 <body>
@@ -61,15 +63,84 @@
           </a>
         </li>
       </ul>
+    </div>
 
-      <navigation class="navigation-chain">
+    <navigation class="navigation-chain">
+      <div class="container">
         <ul class="navigation-chain__list">
           <li class="navigation-chain__item">
             <a class="navigation-chain__link" href="index.html">Главная</a>
           </li>
           <li class="navigation-chain__item">Блог</li>
         </ul>
-      </navigation>
+      </div>
+    </navigation>
+
+    <div class="menu">
+      <div class="container menu__container">
+        <div class="menu__columns">
+          <nav class="menu__section menu__navigation menu__section_catalog">
+            <h3 class="menu__subtitle">Каталог</h3>
+
+            <ul class="menu__list menu__list_two-cols">
+              <li class="menu__item">
+                <a href="#" class="menu__link">Смартфоны</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Бытовая химия</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Ноутбуки</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Книги и журналы</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Ювелирные изделия</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Домашний текстиль</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Одежда</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Электроника</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Бытовая техника</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Косметика</a>
+              </li>
+            </ul>
+          </nav>
+
+          <nav class="menu__section menu__navigation menu__section_to-customers">
+            <h3 class="menu__subtitle">Покупателям</h3>
+
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#" class="menu__link">Оплата заказа</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Условия доставки</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Условия возврата заказа</a>
+              </li>
+              <li class="menu__item">
+                <a href="blog.html" class="menu__link">Блог</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="menu__section menu__section_contacts">
+            <h3 class="menu__subtitle">Связаться с нами</h3>
+            <a href="#" class="menu__item">Контакты</a>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -99,9 +170,12 @@
         <p class="title footer__title">Shop<span class="title__focus">Online</span></p>
 
         <nav class="footer__section footer__navigation footer__section_catalog">
-          <h3 class="footer__subtitle">Каталог</h3>
+          <div class="footer__info-wrapper">
+            <h3 class="footer__subtitle">Каталог</h3>
+            <button class="footer__button">Развернуть</button>
+          </div>
 
-          <ul class="footer__list footer__list_two-cols">
+          <ul class="footer__list footer__list_cover footer__list_two-cols">
             <li class="footer__item">
               <a href="#" class="footer__link">Смартфоны</a>
             </li>
@@ -136,9 +210,12 @@
         </nav>
 
         <nav class="footer__section footer__navigation footer__section_to-customers">
-          <h3 class="footer__subtitle">Покупателям</h3>
+          <div class="footer__info-wrapper">
+            <h3 class="footer__subtitle">Покупателям</h3>
+            <button class="footer__button">Развернуть</button>
+          </div>
 
-          <ul class="footer__list">
+          <ul class="footer__list footer__list_cover">
             <li class="footer__item">
               <a href="#" class="footer__link">Оплата заказа</a>
             </li>

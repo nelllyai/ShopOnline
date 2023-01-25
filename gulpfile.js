@@ -14,6 +14,8 @@ import gulpWebp from 'gulp-webp';
 import gulpAvif from 'gulp-avif';
 import { stream as critical } from 'critical';
 import gulpif from 'gulp-if';
+import autoprefixer from 'gulp-autoprefixer';
+import babel from 'gulp-babel';
 
 const prepros = true;
 let dev = false;
@@ -34,6 +36,7 @@ export const style = () => {
       .src('src/scss/**/*.scss')
       .pipe(gulpif(dev, sourcemaps.init()))
       .pipe(sass().on('error', sass.logError))
+      .pipe(autoprefixer())
       .pipe(cleanCss({
         2: {
           specialComments: 0,
@@ -50,6 +53,7 @@ export const style = () => {
     .pipe(gulpCssimport({
       extensions: ['css']
     }))
+    .pipe(autoprefixer())
     .pipe(cleanCss({
       2: {
         specialComments: 0,
@@ -63,6 +67,10 @@ export const style = () => {
 export const js = () => gulp
   .src('src/js/**/*.js')
   .pipe(gulpif(dev, sourcemaps.init()))
+  .pipe(babel({
+    presets: ['@babel/preset-env'],
+    ignore: ['src/js/**/*.min.js']
+  }))
   .pipe(terser())
   .pipe(gulpif(dev, sourcemaps.write('../maps')))
   .pipe(gulp.dest('dist/js'))
