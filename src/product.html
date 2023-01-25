@@ -152,13 +152,20 @@
     </div>
   </header>
 
-  <main class="product-main">
+  <main class="main">
     <section class="product">
-      <div class="container product__container">
+      <div class="container">
         <h1 class="subtitle product__title">15.6" Игровой ноутбук ASUS G513IE-HN004T</h1>
         <hr class="product__hr">
         <div class="product__wrapper">
-          <img src="img/test-product.jpg" alt="Фото товара" class="product__image">
+          <div class="product__image-wrapper">
+            <picture>
+              <source srcset="img/test-product.avif" type="image/avif">
+              <source srcset="img/test-product.webp" type="image/webp">
+              <img src="img/test-product.jpg" alt="Фото товара" class="product__image" width="757" height="427">
+            </picture>
+            <div class="product__discount">-15%</div>
+          </div>
 
           <div class="product__info">
             <div class="product__price">
@@ -216,7 +223,7 @@
 
     <section class="recommendation">
       <div class="container recomendation__container">
-        <h2 class="subtitle">Рекомендуем также</h2>
+        <h2 class="recommendation__title subtitle">Рекомендуем также</h2>
 
         <ul class="recommendation__list">
           <li tabindex="0" class="card">

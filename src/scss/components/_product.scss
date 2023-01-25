@@ -1,4 +1,6 @@
 .product {
+  padding-bottom: 50px;
+  
   &__title {
     margin-bottom: 25px;
   }
@@ -15,7 +17,42 @@
     margin-bottom: 80px;
   }
 
-  &__image {}
+  &__image-wrapper {
+    position: relative;
+  }
+
+  &__image {
+    object-fit: contain;
+  }
+
+  &__discount {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    right: 50px;
+    height: 88px;
+    width: 88px;
+    border-radius: 50%;
+    background-color: #FFBD13;
+    color: $white;
+  
+    @include tablet {
+      left: 10px;
+      width: 60px;
+      height: 60px;
+      font-size: 20px;
+    }
+  
+    @include phone {
+      left: 5px;
+      bottom: 15px;
+      width: 40px;
+      height: 40px;
+      font-size: 12px;
+    }
+  }
 
   &__info {
     padding: 40px;

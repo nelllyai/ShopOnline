@@ -1,19 +1,12 @@
 .offer {
-  @include laptop {
-    padding-top: 30px;
-  }
-
   @include tablet {
-    padding-top: 21px;
     padding-bottom: 65px;
   }
 
   @include phone {
-    padding-top: 21px;
     padding-bottom: 45px;
   }
 
-  padding-top: 45px;
   padding-bottom: 50px;
   color: $white;
 

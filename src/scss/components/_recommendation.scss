@@ -1,6 +1,5 @@
 .recommendation {
   padding-top: 50px;
-  padding-bottom: 137px;
 
   @include laptop {
     padding-top: 45px;
@@ -15,6 +14,10 @@
   @include phone {
     padding-top: 35px;
     padding-bottom: 70px;
+  }
+
+  &__title {
+    padding-top: 50px;
   }
 
   &__list {

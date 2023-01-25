@@ -13,6 +13,10 @@
     @include laptop {
       top: 180px;
     }
+
+    @include phone {
+      top: 150px;
+    }
   }
 
   &__container {
