@@ -13,12 +13,14 @@ const renderArticles = async () => {
   const list = document.createElement('div');
   list.className = 'main__list';
 
+  // добавить picture
+
   const articles = data.map(({ id, title }) => {
     const card = document.createElement('a');
     card.className = 'article-card';
     card.href = `article.html?id=${id}`;
     card.innerHTML = `
-      <img class="article-card__image" src="img/test.png" alt="Превью статьи">
+      <img class="article-card__image" src="img/test.png" alt="Превью статьи" width="195" height="195">
       <div class="article-card__info">
         <h2 class="article-card__title">${title}</h2>
         <div class="article-card__wrapper">

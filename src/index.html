@@ -7,10 +7,21 @@
 
   <title>ShopOnline</title>
 
-  <link rel="stylesheet" href="css/index.css">
-  <script defer src="scripts/timer.js"></script>
-  <script defer src="scripts/accordion.js"></script>
-  <script defer src="scripts/menu.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const createLink = url => {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = url;
+        document.head.append(link);
+      };
+      createLink('css/index.css');
+    })
+  </script>
+
+  <script defer src="js/timer.js"></script>
+  <script defer src="js/accordion.js"></script>
+  <script defer src="js/menu.js"></script>
 </head>
 
 <body>
@@ -196,7 +207,11 @@
         <ul class="profit__list">
           <li tabindex="0" class="profit__card">
             <div class="profit__image-wrapper">
-              <img src="img/some-product.jpg" alt="Пара белых футболок" class="profit__image">
+              <picture>
+                <source srcset="img/some-product.avif" type="image/avif">
+                <source srcset="img/some-product.webp" type="image/webp">
+                <img src="img/some-product.jpg" alt="Пара белых футболок" class="profit__image" width="420" height="295">
+              </picture>
               <div class="profit__discount">-50%</div>
             </div>
 
@@ -212,7 +227,11 @@
 
           <li tabindex="0" class="profit__card">
             <div class="profit__image-wrapper">
-              <img src="img/some-product.jpg" alt="Пара белых футболок" class="profit__image">
+              <picture>
+                <source srcset="img/some-product.avif" type="image/avif">
+                <source srcset="img/some-product.webp" type="image/webp">
+                <img src="img/some-product.jpg" alt="Пара белых футболок" class="profit__image" width="420" height="295">
+              </picture>
               <div class="profit__discount">-50%</div>
             </div>
 
@@ -228,7 +247,11 @@
 
           <li tabindex="0" class="profit__card">
             <div class="profit__image-wrapper">
-              <img src="img/some-product.jpg" alt="Пара белых футболок" class="profit__image">
+              <picture>
+                <source srcset="img/some-product.avif" type="image/avif">
+                <source srcset="img/some-product.webp" type="image/webp">
+                <img src="img/some-product.jpg" alt="Пара белых футболок" class="profit__image" width="420" height="295">
+              </picture>
               <div class="profit__discount">-50%</div>
             </div>
 
@@ -244,7 +267,11 @@
 
           <li tabindex="0" class="profit__card">
             <div class="profit__image-wrapper">
-              <img src="img/some-product.jpg" alt="Пара белых футболок" class="profit__image">
+              <picture>
+                <source srcset="img/some-product.avif" type="image/avif">
+                <source srcset="img/some-product.webp" type="image/webp">
+                <img src="img/some-product.jpg" alt="Пара белых футболок" class="profit__image" width="420" height="295">
+              </picture>
               <div class="profit__discount">-50%</div>
             </div>
 
@@ -260,7 +287,11 @@
 
           <li tabindex="0" class="profit__card">
             <div class="profit__image-wrapper">
-              <img src="img/some-product.jpg" alt="Пара белых футболок" class="profit__image">
+              <picture>
+                <source srcset="img/some-product.avif" type="image/avif">
+                <source srcset="img/some-product.webp" type="image/webp">
+                <img src="img/some-product.jpg" alt="Пара белых футболок" class="profit__image" width="420" height="295">
+              </picture>
               <div class="profit__discount">-50%</div>
             </div>
 
@@ -276,7 +307,11 @@
 
           <li tabindex="0" class="profit__card">
             <div class="profit__image-wrapper">
-              <img src="img/some-product.jpg" alt="Пара белых футболок" class="profit__image">
+              <picture>
+                <source srcset="img/some-product.avif" type="image/avif">
+                <source srcset="img/some-product.webp" type="image/webp">
+                <img src="img/some-product.jpg" alt="Пара белых футболок" class="profit__image" width="420" height="295">
+              </picture>
               <div class="profit__discount">-50%</div>
             </div>
 
@@ -292,7 +327,11 @@
 
           <li tabindex="0" class="profit__card">
             <div class="profit__image-wrapper">
-              <img src="img/some-product.jpg" alt="Пара белых футболок" class="profit__image">
+              <picture>
+                <source srcset="img/some-product.avif" type="image/avif">
+                <source srcset="img/some-product.webp" type="image/webp">
+                <img src="img/some-product.jpg" alt="Пара белых футболок" class="profit__image" width="420" height="295">
+              </picture>
               <div class="profit__discount">-50%</div>
             </div>
 
@@ -308,7 +347,11 @@
 
           <li tabindex="0" class="profit__card">
             <div class="profit__image-wrapper">
-              <img src="img/some-product.jpg" alt="Пара белых футболок" class="profit__image">
+              <picture>
+                <source srcset="img/some-product.avif" type="image/avif">
+                <source srcset="img/some-product.webp" type="image/webp">
+                <img src="img/some-product.jpg" alt="Пара белых футболок" class="profit__image" width="420" height="295">
+              </picture>
               <div class="profit__discount">-50%</div>
             </div>
 
