@@ -1,12 +1,16 @@
-.recommendation {
+.category-goods {
   padding-top: 50px;
 
   @include laptop {
+    padding-top: 45px;
+  }
+
+  @include tablet {
     padding-top: 30px;
   }
 
   @include phone {
-    padding-top: 25px;
+    padding-top: 35px;
   }
 
   &__list {

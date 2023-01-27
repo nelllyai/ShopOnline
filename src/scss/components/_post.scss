@@ -1,18 +1,68 @@
 .post {
   padding-top: 40px;
 
+  @include laptop {
+    padding-top: 30px;
+  }
+
+  @include tablet {
+    padding-top: 25px;
+  }
+
+  @include phone {
+    padding-top: 15px;
+  }
+
   &__container {
     display: flex;
-    gap: 8%;
+    justify-content: space-between;
+    gap: 140px;
+
+    @include laptop {
+      gap: 20px;
+    }
+
+    @include break(980px) {
+      flex-direction: column;
+      gap: 60px;
+    }
   }
 
   &__title {
-    font-size: 50px;
     margin-bottom: 40px;
+    font-size: 50px;
+    line-height: 130%;
+
+    @include laptop {
+      margin-bottom: 30px;
+      font-size: 40px;
+    }
+
+    @include tablet {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    @include phone {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
   }
 
   &__text {
     margin-bottom: 100px;
+
+    @include laptop {
+      margin-bottom: 60px;
+    }
+
+    @include tablet {
+      margin-bottom: 35px;
+    }
+
+    @include phone {
+      margin-bottom: 30px;
+    }
   }
 
   &__paragraph {
@@ -21,7 +71,31 @@
     line-height: 150%;
 
     &:not(:last-child) {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+
+      @include laptop {
+        margin-bottom: 20px;
+      }
+
+      @include tablet {
+        margin-bottom: 10px;
+      }
+
+      @include phone {
+        margin-bottom: 5px;
+      }
+    }
+
+    @include laptop {
+      font-size: 18px;
+    }
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    @include phone {
+      font-size: 12px;
     }
   }
 
@@ -29,36 +103,75 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
   }
-  
+
   &__author {
     margin-bottom: 20px;
     font-weight: 400;
     font-size: 22px;
     line-height: 150%;
+    text-align: right;
+
+    @include laptop {
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+
+    @include phone {
+      margin-bottom: 20px;
+      font-size: 12px;
+    }
   }
-  
+
   &__date,
   &__item {
     font-weight: 700;
     font-size: 16px;
     line-height: 130%;
     color: $text-color;
+
+    @include laptop {
+      font-size: 14px;
+    }
+
+    @include phone {
+      font-size: 8px;
+    }
   }
-  
+
   &__date {
     margin-bottom: 15px;
+
+    @include phone {
+      margin-bottom: 10px;
+    }
   }
-  
+
   &__community {
     display: flex;
     gap: 70px;
+
+    @include laptop {
+      gap: 53px;
+    }
+
+    @include phone {
+      gap: 20px;
+    }
   }
-  
+
   &__item {
     position: relative;
     padding-left: 25px;
+
+    @include laptop {
+      gap: 53px;
+    }
+
+    @include phone {
+      gap: 20px;
+    }
 
     &_views::before {
       content: "";
@@ -70,6 +183,11 @@
       background-image: url("../img/views-icon.svg");
       background-size: contain;
       background-repeat: no-repeat;
+
+      @include phone {
+        width: 10px;
+        height: 8px;
+      }
     }
 
     &_comments::before {
@@ -81,15 +199,30 @@
       background-image: url("../img/comments-icon.svg");
       background-size: contain;
       background-repeat: no-repeat;
+
+      @include phone {
+        width: 13px;
+        height: 13px;
+      }
     }
   }
-  
+
   &__button {
     position: relative;
     padding-left: 32px;
     font-weight: 700;
     font-size: 16px;
     line-height: 130%;
+
+    @include laptop {
+      padding-left: 25px;
+      font-size: 14px;
+    }
+
+    @include phone {
+      padding-left: 19px;
+      font-size: 10px;
+    }
 
     &::before {
       content: "";
@@ -102,13 +235,12 @@
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
+
+      @include phone {
+        top: calc(50% - 4px);
+        width: 12px;
+        height: 8px;
+      }
     }
-  }
-}
-
-
-@media (max-width: 1366px) {
-  .post__text {
-    margin-bottom: 50px;
   }
 }

@@ -1,13 +1,48 @@
 .product {
   padding-bottom: 50px;
-  
+
+  @include laptop {
+    padding-bottom: 30px;
+  }
+
+  @include phone {
+    padding-bottom: 25px;
+  }
+
   &__title {
     margin-bottom: 25px;
+
+    @include laptop {
+      margin-bottom: 20px;
+      font-size: 40px;
+    }
+
+    @include tablet {
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+
+    @include phone {
+      margin-bottom: 6px;
+      font-size: 18px;
+    }
   }
 
   &__hr {
     margin-bottom: 40px;
     border-top: 1px solid $main-gray;
+
+    @include laptop {
+      margin-bottom: 50px;
+    }
+
+    @include tablet {
+      margin-bottom: 35px;
+    }
+
+    @include phone {
+      margin-bottom: 20px;
+    }
   }
 
   &__wrapper {
@@ -15,6 +50,25 @@
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 80px;
+
+    @include laptop {
+      margin-bottom: 50px;
+    }
+
+    @include break(980px) {
+      align-items: center;
+    }
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+
+    @include break(760px) {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+      gap: 20px;
+    }
   }
 
   &__image-wrapper {
@@ -23,6 +77,23 @@
 
   &__image {
     object-fit: contain;
+    max-width: 757px;
+
+    @include laptop {
+      max-width: 540px;
+    }
+
+    @include break(990px) {
+      max-width: 420px;
+    }
+
+    @include break(830px) {
+      max-width: 380px;
+    }
+
+    @include break(760px) {
+      max-width: 100%;
+    }
   }
 
   &__discount {
@@ -37,19 +108,26 @@
     border-radius: 50%;
     background-color: #FFBD13;
     color: $white;
-  
-    @include tablet {
-      left: 10px;
-      width: 60px;
-      height: 60px;
+
+    @include laptop {
+      top: 10px;
+      right: 30px;
+      width: 66px;
+      height: 66px;
       font-size: 20px;
     }
-  
+
+    @include tablet {
+      width: 50px;
+      height: 50px;
+      font-size: 16px;
+    }
+
     @include phone {
-      left: 5px;
-      bottom: 15px;
-      width: 40px;
-      height: 40px;
+      top: 5px;
+      right: 5px;
+      width: 32px;
+      height: 32px;
       font-size: 12px;
     }
   }
@@ -58,6 +136,16 @@
     padding: 40px;
     box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
     border-radius: 16px;
+
+    @include laptop {
+      padding: 25px;
+    }
+
+    @include break(760px) {
+      padding: 25px 50px;
+      border-radius: 0;
+      width: 100vw;
+    }
   }
 
   &__price {
@@ -65,18 +153,52 @@
     align-items: center;
     margin-bottom: 8px;
     gap: 25px;
+
+    @include laptop {
+      margin-bottom: 16px;
+    }
+
+    @include phone {
+      margin-bottom: 13px;
+      gap: 18px;
+    }
   }
 
   &__new-price {
     font-size: 36px;
     line-height: 43px;
     color: $attention;
+
+    @include laptop {
+      font-size: 28px;
+      line-height: 34px;
+    }
+
+    @include tablet {
+      font-size: 28px;
+      line-height: 34px;
+    }
+
+    @include phone {
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
 
   &__old-price {
     font-size: 22px;
     line-height: 26px;
     text-decoration-line: line-through;
+
+    @include laptop {
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    @include phone {
+      font-size: 12px;
+      line-height: 14px;
+    }
   }
 
   &__credit {
@@ -84,6 +206,15 @@
     font-size: 16px;
     line-height: 130%;
     color: $main-blue;
+
+    @include laptop {
+      font-size: 14px;
+    }
+
+    @include phone {
+      margin-bottom: 20px;
+      font-size: 12px;
+    }
   }
 
   &__control {
@@ -91,6 +222,15 @@
     align-items: center;
     margin-bottom: 30px;
     gap: 25px;
+
+    @include laptop {
+      gap: 22px;
+    }
+
+    @include phone {
+      margin-bottom: 20px;
+      gap: 20px;
+    }
   }
 
   &__to-cart {
@@ -99,6 +239,25 @@
     font-size: 16px;
     line-height: 130%;
     color: $white;
+
+    @include laptop {
+      padding: 12px 26px;
+    }
+
+    @include phone {
+      padding: 8px 18px;
+      font-size: 12px;
+    }
+  }
+
+  &__to-favourite {
+    width: 28px;
+    height: 25px;
+
+    @include phone {
+      width: 20px;
+      height: 18px;
+    }
   }
 
   &__main-info {
@@ -108,6 +267,15 @@
     gap: 70px;
     font-size: 16px;
     line-height: 130%;
+
+    @include laptop {
+      gap: 60px;
+    }
+
+    @include phone {
+      gap: 33px;
+      font-size: 12px;
+    }
   }
 
   &__info-title {
@@ -123,6 +291,16 @@
     line-height: 130%;
     color: $main-blue;
 
+    @include laptop {
+      padding-left: 26px;
+      font-size: 14px;
+    }
+
+    @include phone {
+      padding-left: 15px;
+      font-size: 8px;
+    }
+
     &::before {
       content: "";
       position: absolute;
@@ -134,16 +312,61 @@
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
+
+      @include laptop {
+        width: 17px;
+        height: 18px;
+      }
+  
+      @include phone {
+        width: 10px;
+        height: 11px;
+      }
     }
   }
 
   &__more-info {
     max-width: 70%;
+
+    @include laptop {
+      max-width: 100%;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+    font-size: 32px;
+    line-height: 130%;
+
+    @include laptop {
+      font-size: 24px;
+    }
+
+    @include tablet {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    @include phone {
+      margin-bottom: 6px;
+    }
   }
 
   &__description {
     font-weight: 400;
     font-size: 22px;
     line-height: 150%;
+
+    @include laptop {
+      font-size: 18px;
+    }
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    @include phone {
+      font-size: 12px;
+    }
   }
 }
