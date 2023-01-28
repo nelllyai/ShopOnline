@@ -1,7 +1,31 @@
 .composition {
+  padding-bottom: 50px;
+
+  @include laptop {
+    padding-bottom: 30px;
+  }
+
+  @include phone {
+    padding-bottom: 25px;
+  }
+
   &__container {
     display: flex;
+    justify-content: space-between;
     gap: 30px;
+
+    @include break(1690px) {
+      flex-direction: column;
+    }
+
+    @include tablet {
+      padding: 0;
+      width: 100vw;
+      gap: 20px;
+    }
+  }
+
+  &__wrapper {
   }
 
   &__cart,
@@ -10,10 +34,19 @@
     padding: 30px 40px;
     box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
     border-radius: 16px;
+
+    @include tablet {
+      padding: 30px 60px;
+      border-radius: 0;
+    }
   }
 
   &__cart {
     margin-bottom: 30px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
   }
 
   &__title,
@@ -38,11 +71,60 @@
 
   &__full-order {}
 
-  &__full-product {}
+  &__full-product {
+    display: flex;
+    gap: 140px;
+
+    @include break(1690px) {
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    @include break(840px) {
+      gap: 20px;
+    }
+
+    @include tablet {
+      display: block;
+    }
+  }
 
   &__column {
     display: flex;
     gap: 15px;
+
+    &_item {
+      @include tablet {
+        margin-bottom: 15px;
+      }
+    }
+
+    &_price {
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+      width: 155px;
+      gap: 0;
+
+      &_tablet {
+        display: none;
+
+        @include tablet {
+          display: flex;
+          flex-direction: row;
+          align-items: baseline;
+          width: 100%;
+          gap: 10px;
+          text-align: left;
+        }
+      }
+
+      &_pc {
+        @include tablet {
+          display: none;
+        }
+      }
+    }
   }
 
   &__product-image {
@@ -52,9 +134,19 @@
     border: 1px solid #E8E8E8;
     border-radius: 10px;
 
+    @include tablet {
+      width: 90px;
+      height: 90px;
+    }
+
     &_small {
       width: 80px;
       height: 80px;
+
+      @include tablet {
+        width: 60px;
+        height: 60px;
+      }
     }
   }
 
@@ -62,14 +154,90 @@
     font-weight: 400;
     font-size: 22px;
     line-height: 150%;
+    max-width: 533px;
+
+    @include break(1690px) {
+      max-width: 370px;
+    }
+
+    @include tablet {
+      max-width: none;
+      font-size: 18px;
+    }
+  }
+
+  &__count-button {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #E8E8E8;
+    border-radius: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: $main-gray;
+  }
+
+  &__quantity {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 150%;
+  }
+
+  &__new-price {
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 31px;
+
+    @include tablet {
+      font-size: 22px;
+      line-height: 26px;
+    }
+  }
+
+  &__old-price {
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: $main-gray;
+    text-decoration-line: line-through;
+
+    @include tablet {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  &__credit {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: $main-blue;
+
+    @include tablet {
+      font-size: 14px;
+    }
   }
 
   &__delivery {}
 
+  &__subtitle {
+    display: none;
+  }
+
   &__method {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 40px) 80px;
+
+    @include break (1690px) {
+      grid-template-rows: repeat(2, 60px) 80px;
+    }
+
+    @include tablet {
+      display: block;
+    }
   }
 
   &__delivery-info {
@@ -77,6 +245,16 @@
     font-size: 16px;
     line-height: 130%;
     color: $main-gray;
+
+    @include tablet {
+      font-size: 14px;
+    }
+
+    &_hide {
+      @include tablet {
+        display: none;
+      }
+    }
 
     &_black {
       color: $text-color;
@@ -89,7 +267,15 @@
     line-height: 130%;
   }
 
-  &__full-info {}
+  &__full-info {
+    width: 420px;
+    height: 540px;
+
+    @include tablet {
+      padding: 30px;
+      width: 100%;
+    }
+  }
 
   &__list {
     margin-bottom: 20px;
@@ -116,6 +302,11 @@
   &__cost {
     font-size: 26px;
     line-height: 31px;
+
+    @include tablet {
+      font-size: 22px;
+      line-height: 26px;
+    }
   }
 
   &__info-title,
@@ -124,6 +315,10 @@
     font-size: 16px;
     line-height: 130%;
     color: $main-gray;
+
+    @include tablet {
+      font-size: 12px;
+    }
   }
 
   &__more-info {
@@ -134,6 +329,10 @@
   &__order {
     font-size: 16px;
     line-height: 130%;
+
+    @include tablet {
+      font-size: 12px;
+    }
   }
 
   &__point {
@@ -168,6 +367,11 @@
     font-size: 16px;
     line-height: 130%;
     color: $white;
+
+    @include tablet {
+      width: 100%;
+      font-size: 14px;
+    }
   }
 
   &__agreement {
@@ -175,5 +379,9 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 130%;
+
+    @include tablet {
+      font-size: 12px;
+    }
   }
 }
