@@ -98,9 +98,7 @@ if (timerBlock) {
 
     if (timer.days <= 0) {
       document.querySelector('.timer__item_days').style.display = 'none';
-      counterSeconds.textContent = timer.seconds > 9 ?
-        timer.seconds : '0' + timer.seconds;
-      unitsSeconds.textContent = getDeclension(timer.seconds, 'seconds');
+      document.querySelector('.timer__item_seconds').style.display = 'flex';
     }
 
     counterDays.textContent = timer.days;
@@ -113,6 +111,10 @@ if (timerBlock) {
     counterMinutes.textContent = timer.minutes > 9 ?
       timer.minutes : '0' + timer.minutes;
     unitsMinutes.textContent = getDeclension(timer.minutes, 'minutes');
+
+    counterSeconds.textContent = timer.seconds > 9 ?
+        timer.seconds : '0' + timer.seconds;
+      unitsSeconds.textContent = getDeclension(timer.seconds, 'seconds');
 
     const timerId = setTimeout(start, 1000);
 

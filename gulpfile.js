@@ -290,7 +290,7 @@ export const avif = () =>
 
 export const critCSS = () =>
   gulp
-    .src(path.src.html)
+    .src(path.dist.html)
     .pipe(
       critical({
         base: path.dist.base,
