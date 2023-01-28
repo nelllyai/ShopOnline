@@ -1,5 +1,3 @@
-'use strict';
-
 const items = document.querySelectorAll('.footer__list_cover');
 const buttons = document.querySelectorAll('.footer__button');
 

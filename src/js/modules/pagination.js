@@ -1,5 +1,3 @@
-'use strict';
-
 const getArticles = async () => {
   const page = window.location.search;
   const result = await fetch(`https://gorest.co.in/public-api/posts${page}`);
@@ -12,8 +10,6 @@ const renderArticles = async () => {
   const listWrapper = document.querySelector('.main__container');
   const list = document.createElement('div');
   list.className = 'main__list';
-
-  // добавить picture
 
   const articles = data.map(({ id, title }) => {
     const card = document.createElement('a');
@@ -38,6 +34,7 @@ const renderArticles = async () => {
   list.append(...articles);
   listWrapper.prepend(list);
 };
+
 const getPages = async () => {
   const result = await fetch('https://gorest.co.in/public-api/posts');
   const info = await result.json();
@@ -90,7 +87,6 @@ const renderNavigation = async () => {
   prevArrow.href = `blog.html?page=${currentPage - 1}`;
   nextArrow.href = `blog.html?page=${currentPage + 1}`;
 };
-
 
 renderArticles();
 renderNavigation();

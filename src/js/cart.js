@@ -1,4 +1,4 @@
 import './modules/menu.js';
 import './modules/accordion.js';
 import './modules/footer.js';
-import './modules/post.js';
+import './modules/profit.js';

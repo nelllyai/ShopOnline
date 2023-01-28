@@ -1,0 +1,179 @@
+.composition {
+  &__container {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__cart,
+  &__delivery,
+  &__full-info {
+    padding: 30px 40px;
+    box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+  }
+
+  &__cart {
+    margin-bottom: 30px;
+  }
+
+  &__title,
+  &__subtitle {
+    margin-bottom: 20px;
+
+    @include tablet {
+      font-size: 28px;
+    }
+  }
+
+  &__choose-all {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 130%;
+  }
+
+  &__hr {
+    margin-bottom: 20px;
+  }
+
+  &__full-order {}
+
+  &__full-product {}
+
+  &__column {
+    display: flex;
+    gap: 15px;
+  }
+
+  &__product-image {
+    object-fit: contain;
+    width: 130px;
+    height: 130px;
+    border: 1px solid #E8E8E8;
+    border-radius: 10px;
+
+    &_small {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &__product-title {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 150%;
+  }
+
+  &__delivery {}
+
+  &__method {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  &__delivery-info {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: $main-gray;
+
+    &_black {
+      color: $text-color;
+    }
+  }
+
+  &__date {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+  }
+
+  &__full-info {}
+
+  &__list {
+    margin-bottom: 20px;
+  }
+
+  &__total,
+  &__item {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__total {
+    margin-bottom: 20px;
+    align-items: center;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__subsubtitle,
+  &__cost {
+    font-size: 26px;
+    line-height: 31px;
+  }
+
+  &__info-title,
+  &__info {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: $main-gray;
+  }
+
+  &__more-info {
+    margin-bottom: 30px;
+  }
+
+  &__point,
+  &__order {
+    font-size: 16px;
+    line-height: 130%;
+  }
+
+  &__point {
+    margin-bottom: 20px;
+    font-weight: 400;
+    color: $main-gray;
+  }
+
+  &__order {
+    margin-bottom: 20px;
+
+    &_small-margin {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__select {
+    color: $main-blue;
+  }
+
+  &__text {
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__button {
+    display: block;
+    padding: 14px 100px;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 130%;
+    color: $white;
+  }
+
+  &__agreement {
+    display: block;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+  }
+}

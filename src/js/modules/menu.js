@@ -1,5 +1,3 @@
-'use strict';
-
 const menuBtn = document.querySelector('.header__menu-button');
 const menu = document.querySelector('.menu');
 

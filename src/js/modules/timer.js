@@ -1,5 +1,3 @@
-'use strict';
-
 const timerBlock = document.querySelector('[data-timer-deadline]');
 
 if (timerBlock) {

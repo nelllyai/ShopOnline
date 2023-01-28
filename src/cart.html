@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Товар</title>
-  <link rel="stylesheet" href="css/product.min.css">
+  <title>Корзина</title>
+  <link rel="stylesheet" href="css/cart.min.css">
 
-  <script defer src="js/product.min.js"></script>
+  <script defer src="js/cart.min.js"></script>
 </head>
 
 <body>
@@ -70,9 +70,7 @@
           <li class="navigation-chain__item">
             <a class="navigation-chain__link" href="index.html">Главная</a>
           </li>
-          <li class="navigation-chain__item">Каталог</li>
-          <li class="navigation-chain__item navigation-chain__item_category"></li>
-          <li class="navigation-chain__item navigation-chain__item_title"></li>
+          <li class="navigation-chain__item">Корзина</li>
         </ul>
       </div>
     </navigation>
@@ -115,12 +113,112 @@
   </header>
 
   <main class="main">
-    <section class="product">
-      <div class="container product__container"></div>
+    <section class="composition">
+      <div class="container composition__container">
+        <div class="composition__wrapper">
+          <div class="composition__cart">
+            <h1 class="subtitle composition__title">Корзина</h1>
+
+            <label class="composition__choose-all">
+              <input type="checkbox" class="composition__checkbox">
+              Выбрать все
+            </label>
+
+            <hr class="composition__hr">
+
+            <ul class="composition__full-order">
+              <li class="composition__full-product">
+                <div class="composition__column">
+                  <input type="checkbox" class="composition__checkbox">
+                  <img src="./img/some-product.jpg" alt="" class="composition__product-image">
+                  <h3 class="composition__product-title">15.6" Игровой ноутбук ASUS G513IE-HN004T</h3>
+                </div>
+
+
+              </li>
+            </ul>
+          </div>
+
+          <div class="composition__delivery">
+            <h2 class="subtitle composition__subtitle">Способ доставки</h2>
+
+            <div class="composition__method">
+              <p class="composition__delivery-info">Пункт выдачи</p>
+              <p class="composition__delivery-info composition__delivery-info_black">
+                г. Москва (Московская область), улица Павлика Морозова, д. 48, (Пункт выдачи), Ежедневно 10:00-21:00
+              </p>
+
+              <p class="composition__delivery-info">Стоимость доставки</p>
+              <p class="composition__delivery-info composition__delivery-info_black">Бесплатно</p>
+
+              <p class="composition__date">10-13 февраля</p>
+
+              <ul class="composition__goods">
+                <li class="composition__product">
+                  <img src="./img/some-product.jpg" alt=""
+                    class="composition__product-image composition__product-image_small">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="composition__full-info">
+          <div class="composition__total">
+            <p class="composition__subsubtitle">Итого:</p>
+            <p class="composition__cost">112 992 ₽</p>
+          </div>
+
+          <ul class="composition__list">
+            <li class="composition__item">
+              <p class="composition__info-title">Товары, 2 шт.</p>
+              <p class="composition__info">145 080 ₽</p>
+            </li>
+            <li class="composition__item">
+              <p class="composition__info-title">Скидка</p>
+              <p class="composition__info">32 088 ₽</p>
+            </li>
+            <li class="composition__item">
+              <p class="composition__info-title">Доставка</p>
+              <p class="composition__info">Бесплатно</p>
+            </li>
+          </ul>
+
+          <div class="composition__more-info">
+            <p class="composition__order composition__order_small-margin">
+              Доставка: <span class="composition__select">Пункт выдачи</span>
+            </p>
+
+            <div class="composition__point">
+              <p class="composition__text">
+                Ежедневно 10:00 - 21:00
+              </p>
+              <p class="composition__text">
+                г. Москва (Московская область), улица Павлика Морозова, д. 48
+              </p>
+            </div>
+
+            <p class="composition__order">
+              Дата: <span class="composition__select">10-13 февраля</span>
+            </p>
+
+            <p class="composition__order">
+              Оплата: <span class="composition__select">Картой</span>
+            </p>
+          </div>
+
+          <button type="submit" class="button composition__button">Заказать</button>
+
+          <label class="composition__agreement">
+            <input type="checkbox" name="agree" value="true" class="composition__checkbox">
+            Согласен с условиями правил пользования торговой площадкой и правилами возврата
+          </label>
+        </div>
+      </div>
     </section>
 
-    <section class="recommendation">
-      <div class="container recomendation__container"></div>
+    <section class="profit">
+      <div class="container profit__container"></div>
     </section>
   </main>
 

@@ -15,13 +15,11 @@
         link.href = url;
         document.head.append(link);
       };
-      createLink('css/index.css');
+      createLink('css/index.min.css');
     })
   </script>
 
-  <script defer src="js/timer.js"></script>
-  <script defer src="js/accordion.js"></script>
-  <script defer src="js/menu.js"></script>
+  <script defer src="js/index.min.js"></script>
 </head>
 
 <body>
@@ -56,7 +54,7 @@
           </a>
         </li>
         <li class="header__item">
-          <a class="header__link" href="#">
+          <a class="header__link" href="cart.html">
             <svg class="svg" width="31" height="30" viewBox="0 0 31 30" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path
@@ -84,38 +82,7 @@
           <nav class="menu__section menu__navigation menu__section_catalog">
             <h3 class="menu__subtitle">Каталог</h3>
 
-            <ul class="menu__list menu__list_two-cols">
-              <li class="menu__item">
-                <a href="#" class="menu__link">Смартфоны</a>
-              </li>
-              <li class="menu__item">
-                <a href="#" class="menu__link">Бытовая химия</a>
-              </li>
-              <li class="menu__item">
-                <a href="#" class="menu__link">Ноутбуки</a>
-              </li>
-              <li class="menu__item">
-                <a href="#" class="menu__link">Книги и журналы</a>
-              </li>
-              <li class="menu__item">
-                <a href="#" class="menu__link">Ювелирные изделия</a>
-              </li>
-              <li class="menu__item">
-                <a href="#" class="menu__link">Домашний текстиль</a>
-              </li>
-              <li class="menu__item">
-                <a href="#" class="menu__link">Одежда</a>
-              </li>
-              <li class="menu__item">
-                <a href="#" class="menu__link">Электроника</a>
-              </li>
-              <li class="menu__item">
-                <a href="#" class="menu__link">Бытовая техника</a>
-              </li>
-              <li class="menu__item">
-                <a href="#" class="menu__link">Косметика</a>
-              </li>
-            </ul>
+            <ul class="menu__list menu__list_two-cols"></ul>
           </nav>
 
           <nav class="menu__section menu__navigation menu__section_to-customers">
@@ -201,171 +168,7 @@
     </section>
 
     <section class="profit">
-      <div class="container profit__container">
-        <h2 class="subtitle">Это выгодно!</h2>
-
-        <ul class="profit__list">
-          <li tabindex="0" class="card">
-            <div class="card__image-wrapper">
-              <picture>
-                <source srcset="img/some-product.avif" type="image/avif">
-                <source srcset="img/some-product.webp" type="image/webp">
-                <img src="img/some-product.jpg" alt="Пара белых футболок" class="card__image" width="420" height="295">
-              </picture>
-              <div class="card__discount">-50%</div>
-            </div>
-
-            <div class="card__price">
-              <p class="card__new-price">1299 ₽</p>
-              <p class="card__old-price">
-                <span class="visually-hidden">Старая цена</span>2598 ₽
-              </p>
-            </div>
-
-            <p class="card__product">Пара футболок</p>
-          </li>
-
-          <li tabindex="0" class="card">
-            <div class="card__image-wrapper">
-              <picture>
-                <source srcset="img/some-product.avif" type="image/avif">
-                <source srcset="img/some-product.webp" type="image/webp">
-                <img src="img/some-product.jpg" alt="Пара белых футболок" class="card__image" width="420" height="295">
-              </picture>
-              <div class="card__discount">-50%</div>
-            </div>
-
-            <div class="card__price">
-              <p class="card__new-price">1299 ₽</p>
-              <p class="card__old-price">
-                <span class="visually-hidden">Старая цена</span>2598 ₽
-              </p>
-            </div>
-
-            <p class="card__product">Пара футболок</p>
-          </li>
-
-          <li tabindex="0" class="card">
-            <div class="card__image-wrapper">
-              <picture>
-                <source srcset="img/some-product.avif" type="image/avif">
-                <source srcset="img/some-product.webp" type="image/webp">
-                <img src="img/some-product.jpg" alt="Пара белых футболок" class="card__image" width="420" height="295">
-              </picture>
-              <div class="card__discount">-50%</div>
-            </div>
-
-            <div class="card__price">
-              <p class="card__new-price">1299 ₽</p>
-              <p class="card__old-price">
-                <span class="visually-hidden">Старая цена</span>2598 ₽
-              </p>
-            </div>
-
-            <p class="card__product">Пара футболок</p>
-          </li>
-
-          <li tabindex="0" class="card">
-            <div class="card__image-wrapper">
-              <picture>
-                <source srcset="img/some-product.avif" type="image/avif">
-                <source srcset="img/some-product.webp" type="image/webp">
-                <img src="img/some-product.jpg" alt="Пара белых футболок" class="card__image" width="420" height="295">
-              </picture>
-              <div class="card__discount">-50%</div>
-            </div>
-
-            <div class="card__price">
-              <p class="card__new-price">1299 ₽</p>
-              <p class="card__old-price">
-                <span class="visually-hidden">Старая цена</span>2598 ₽
-              </p>
-            </div>
-
-            <p class="card__product">Пара футболок</p>
-          </li>
-
-          <li tabindex="0" class="card">
-            <div class="card__image-wrapper">
-              <picture>
-                <source srcset="img/some-product.avif" type="image/avif">
-                <source srcset="img/some-product.webp" type="image/webp">
-                <img src="img/some-product.jpg" alt="Пара белых футболок" class="card__image" width="420" height="295">
-              </picture>
-              <div class="card__discount">-50%</div>
-            </div>
-
-            <div class="card__price">
-              <p class="card__new-price">1299 ₽</p>
-              <p class="card__old-price">
-                <span class="visually-hidden">Старая цена</span>2598 ₽
-              </p>
-            </div>
-
-            <p class="card__product">Пара футболок</p>
-          </li>
-
-          <li tabindex="0" class="card">
-            <div class="card__image-wrapper">
-              <picture>
-                <source srcset="img/some-product.avif" type="image/avif">
-                <source srcset="img/some-product.webp" type="image/webp">
-                <img src="img/some-product.jpg" alt="Пара белых футболок" class="card__image" width="420" height="295">
-              </picture>
-              <div class="card__discount">-50%</div>
-            </div>
-
-            <div class="card__price">
-              <p class="card__new-price">1299 ₽</p>
-              <p class="card__old-price">
-                <span class="visually-hidden">Старая цена</span>2598 ₽
-              </p>
-            </div>
-
-            <p class="card__product">Пара футболок</p>
-          </li>
-
-          <li tabindex="0" class="card">
-            <div class="card__image-wrapper">
-              <picture>
-                <source srcset="img/some-product.avif" type="image/avif">
-                <source srcset="img/some-product.webp" type="image/webp">
-                <img src="img/some-product.jpg" alt="Пара белых футболок" class="card__image" width="420" height="295">
-              </picture>
-              <div class="card__discount">-50%</div>
-            </div>
-
-            <div class="card__price">
-              <p class="card__new-price">1299 ₽</p>
-              <p class="card__old-price">
-                <span class="visually-hidden">Старая цена</span>2598 ₽
-              </p>
-            </div>
-
-            <p class="card__product">Пара футболок</p>
-          </li>
-
-          <li tabindex="0" class="card">
-            <div class="card__image-wrapper">
-              <picture>
-                <source srcset="img/some-product.avif" type="image/avif">
-                <source srcset="img/some-product.webp" type="image/webp">
-                <img src="img/some-product.jpg" alt="Пара белых футболок" class="card__image" width="420" height="295">
-              </picture>
-              <div class="card__discount">-50%</div>
-            </div>
-
-            <div class="card__price">
-              <p class="card__new-price">1299 ₽</p>
-              <p class="card__old-price">
-                <span class="visually-hidden">Старая цена</span>2598 ₽
-              </p>
-            </div>
-
-            <p class="card__product">Пара футболок</p>
-          </li>
-        </ul>
-      </div>
+      <div class="container profit__container"></div>
     </section>
   </main>
 
@@ -380,38 +183,7 @@
             <button class="footer__button">Развернуть</button>
           </div>
 
-          <ul class="footer__list footer__list_cover footer__list_two-cols">
-            <li class="footer__item">
-              <a href="#" class="footer__link">Смартфоны</a>
-            </li>
-            <li class="footer__item">
-              <a href="#" class="footer__link">Бытовая химия</a>
-            </li>
-            <li class="footer__item">
-              <a href="#" class="footer__link">Ноутбуки</a>
-            </li>
-            <li class="footer__item">
-              <a href="#" class="footer__link">Книги и журналы</a>
-            </li>
-            <li class="footer__item">
-              <a href="#" class="footer__link">Ювелирные изделия</a>
-            </li>
-            <li class="footer__item">
-              <a href="#" class="footer__link">Домашний текстиль</a>
-            </li>
-            <li class="footer__item">
-              <a href="#" class="footer__link">Одежда</a>
-            </li>
-            <li class="footer__item">
-              <a href="#" class="footer__link">Электроника</a>
-            </li>
-            <li class="footer__item">
-              <a href="#" class="footer__link">Бытовая техника</a>
-            </li>
-            <li class="footer__item">
-              <a href="#" class="footer__link">Косметика</a>
-            </li>
-          </ul>
+          <ul class="footer__list footer__list_cover footer__list_two-cols"></ul>
         </nav>
 
         <nav class="footer__section footer__navigation footer__section_to-customers">
