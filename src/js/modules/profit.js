@@ -1,7 +1,7 @@
-import { createCard } from "./card.js";
+import { createCard } from "./createElements.js";
 import { getGoodsOnSale } from "./getGoods.js";
 
-const renderProfit = async () => {
+const placeProfit = async () => {
   const container = document.querySelector('.profit__container');
   const items = await getGoodsOnSale();
 
@@ -18,4 +18,4 @@ const renderProfit = async () => {
   container.append(title, ul);
 };
 
-renderProfit();
+placeProfit();

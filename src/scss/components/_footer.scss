@@ -88,14 +88,14 @@
       width: 17px;
       height: 8px;
       font-size: 0;
-      background-image: url("../img/arrow-list-down.svg");
+      background-image: url("../img/svg/arrow-list-down.svg");
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
     }
 
     &_active {
-      background-image: url("../img/arrow-list-up.svg");
+      background-image: url("../img/svg/arrow-list-up.svg");
     }
 
     display: none;

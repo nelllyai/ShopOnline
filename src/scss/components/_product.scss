@@ -30,7 +30,9 @@
 
   &__hr {
     margin-bottom: 40px;
-    border-top: 1px solid $main-gray;
+    height: 1px;
+    border: 0;
+    background-color: $main-gray--light;
 
     @include laptop {
       margin-bottom: 50px;

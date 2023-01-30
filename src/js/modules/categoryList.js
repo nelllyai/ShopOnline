@@ -1,7 +1,7 @@
-import { createCard } from "./card.js";
+import { createCard } from "./createElements.js";
 import { getGoodsByCategory } from "./getGoods.js";
 
-const renderCategoryList = async () => {
+const placeCategoryList = async () => {
   const url = new URL(window.location.href);
   const category = url.searchParams.get('search');
   const items = await getGoodsByCategory(category);
@@ -21,4 +21,4 @@ const renderCategoryList = async () => {
   container.append(title, ul);
 };
 
-renderCategoryList();
+placeCategoryList();

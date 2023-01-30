@@ -25,8 +25,7 @@
     }
   }
 
-  &__wrapper {
-  }
+  &__wrapper {}
 
   &__cart,
   &__delivery,
@@ -38,6 +37,10 @@
     @include tablet {
       padding: 30px 60px;
       border-radius: 0;
+    }
+
+    @include phone {
+      padding: 15px 20px;
     }
   }
 
@@ -56,23 +59,77 @@
     @include tablet {
       font-size: 28px;
     }
+
+    @include phone {
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    @include break(1690px) {
+      margin-bottom: 30px;
+    }
+
+    @include phone {
+      display: block;
+      margin-bottom: 20px;
+    }
   }
 
   &__choose-all {
-    display: block;
-    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include phone {
+      gap: 5px;
+    }
+  }
+
+  &__choose-text {
     font-size: 16px;
     line-height: 130%;
+
+    @include tablet {
+      font-size: 14px;
+    }
+
+    @include phone {
+      font-size: 10px;
+    }
+  }
+
+  &__delete {
+    @include tablet {
+      display: none;
+    }
   }
 
   &__hr {
     margin-bottom: 20px;
+    height: 1px;
+    border: 0;
+    background-color: $main-gray--light;
+
+    @include phone {
+      margin-bottom: 15px;
+    }
   }
 
-  &__full-order {}
+  &__full-order {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
 
   &__full-product {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 110px 145px;
     gap: 140px;
 
     @include break(1690px) {
@@ -80,7 +137,7 @@
       gap: 40px;
     }
 
-    @include break(840px) {
+    @include break(940px) {
       gap: 20px;
     }
 
@@ -99,6 +156,16 @@
       }
     }
 
+    &_counter {
+      align-items: center;
+      height: 36px;
+      gap: 10px;
+
+      @include tablet {
+        height: 28px;
+      }
+    }
+
     &_price {
       display: flex;
       flex-direction: column;
@@ -113,9 +180,15 @@
           display: flex;
           flex-direction: row;
           align-items: baseline;
+          margin-bottom: 5px;
           width: 100%;
           gap: 10px;
           text-align: left;
+        }
+
+        @include phone {
+          flex-wrap: wrap;
+          row-gap: 0;
         }
       }
 
@@ -127,14 +200,20 @@
     }
   }
 
+  &__checkbox {
+    display: block;
+  }
+
   &__product-image {
     object-fit: contain;
+    min-width: 130px;
     width: 130px;
     height: 130px;
     border: 1px solid #E8E8E8;
     border-radius: 10px;
 
     @include tablet {
+      min-width: 90px;
       width: 90px;
       height: 90px;
     }
@@ -164,6 +243,10 @@
       max-width: none;
       font-size: 18px;
     }
+
+    @include phone {
+      font-size: 12px;
+    }
   }
 
   &__count-button {
@@ -175,16 +258,25 @@
     font-size: 16px;
     line-height: 130%;
     color: $main-gray;
+
+    @include tablet {
+      width: 28px;
+      height: 28px;
+      font-size: 12px;
+    }
   }
 
   &__quantity {
     font-weight: 400;
     font-size: 22px;
     line-height: 150%;
+
+    @include tablet {
+      font-size: 18px;
+    }
   }
 
   &__new-price {
-    margin-bottom: 5px;
     font-weight: 700;
     font-size: 26px;
     line-height: 31px;
@@ -193,10 +285,14 @@
       font-size: 22px;
       line-height: 26px;
     }
+
+    @include phone {
+      font-size: 16px;
+      line-height: 19px;
+    }
   }
 
   &__old-price {
-    margin-bottom: 15px;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
@@ -206,6 +302,11 @@
     @include tablet {
       font-size: 12px;
       line-height: 14px;
+    }
+
+    @include phone {
+      font-size: 10px;
+      line-height: 12px;
     }
   }
 
@@ -218,12 +319,18 @@
     @include tablet {
       font-size: 14px;
     }
+
+    @include phone {
+      font-size: 10px;
+    }
   }
 
   &__delivery {}
 
   &__subtitle {
-    display: none;
+    @include tablet {
+      display: none;
+    }
   }
 
   &__method {
@@ -247,7 +354,12 @@
     color: $main-gray;
 
     @include tablet {
+      margin-bottom: 15px;
       font-size: 14px;
+    }
+
+    @include phone {
+      font-size: 10px;
     }
 
     &_hide {
@@ -259,12 +371,27 @@
     &_black {
       color: $text-color;
     }
+
+    &_cost {
+      @include tablet {
+        color: $main-gray;
+      }
+    }
   }
 
   &__date {
     font-weight: 700;
     font-size: 16px;
     line-height: 130%;
+
+    @include tablet {
+      margin-bottom: 15px;
+    }
+
+    @include phone {
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
   }
 
   &__full-info {
@@ -274,6 +401,7 @@
     @include tablet {
       padding: 30px;
       width: 100%;
+      height: auto;
     }
   }
 
@@ -307,6 +435,11 @@
       font-size: 22px;
       line-height: 26px;
     }
+
+    @include phone {
+      font-size: 16px;
+      line-height: 19px;
+    }
   }
 
   &__info-title,
@@ -318,6 +451,10 @@
 
     @include tablet {
       font-size: 12px;
+    }
+
+    @include phone {
+      font-size: 10px;
     }
   }
 
@@ -342,7 +479,13 @@
   }
 
   &__order {
+    display: flex;
     margin-bottom: 20px;
+    gap: 5px;
+
+    @include tablet {
+      justify-content: space-between;
+    }
 
     &_small-margin {
       margin-bottom: 10px;
@@ -350,7 +493,9 @@
   }
 
   &__select {
-    color: $main-blue;
+    &_blue {
+      color: $main-blue;
+    }
   }
 
   &__text {
@@ -372,16 +517,32 @@
       width: 100%;
       font-size: 14px;
     }
+
+    @include phone {
+      font-size: 12px;
+    }
   }
 
   &__agreement {
-    display: block;
+    display: flex;
+    gap: 10px;
+
+    @include phone {
+      gap: 5px;
+    }
+  }
+
+  &__agreement-text {
     font-weight: 400;
     font-size: 16px;
     line-height: 130%;
 
     @include tablet {
       font-size: 12px;
+    }
+
+    @include phone {
+      font-size: 10px;
     }
   }
 }
