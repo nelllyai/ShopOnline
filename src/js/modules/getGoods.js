@@ -1,4 +1,4 @@
-const url = 'http://shorthaired-veiled-fascinator.glitch.me';
+const url = 'https://shorthaired-veiled-fascinator.glitch.me';
 
 export const getGoods = async () => {
   const result = await fetch(`${url}/api/goods`);

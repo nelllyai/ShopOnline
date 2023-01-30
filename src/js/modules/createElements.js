@@ -4,7 +4,7 @@ const getImageSrc = image => {
   if (image === 'image/notimage.jpg') {
     return './img/no-image.png';
   }
-  return `http://shorthaired-veiled-fascinator.glitch.me/${image}`;
+  return `https://shorthaired-veiled-fascinator.glitch.me/${image}`;
 };
 
 export const createCard = ({ id, title, price, discount, image }) => {
