@@ -54,7 +54,7 @@ buttons.forEach((btn, index) => {
 });
 ;// CONCATENATED MODULE: ./src/js/modules/catalog.js
 const getCategories = async () => {
-  const result = await fetch(`http://shorthaired-veiled-fascinator.glitch.me/api/category`);
+  const result = await fetch(`https://shorthaired-veiled-fascinator.glitch.me/api/category`);
   const list = await result.json();
   return list;
 };
@@ -222,7 +222,7 @@ const getImageSrc = image => {
   if (image === 'image/notimage.jpg') {
     return './img/no-image.png';
   }
-  return `http://shorthaired-veiled-fascinator.glitch.me/${image}`;
+  return `https://shorthaired-veiled-fascinator.glitch.me/${image}`;
 };
 const createCard = ({
   id,
@@ -393,7 +393,7 @@ const createProductPreview = ({
   return li;
 };
 ;// CONCATENATED MODULE: ./src/js/modules/getGoods.js
-const url = 'http://shorthaired-veiled-fascinator.glitch.me';
+const url = 'https://shorthaired-veiled-fascinator.glitch.me';
 const getGoods = async () => {
   const result = await fetch(`${url}/api/goods`);
   const goods = await result.json();

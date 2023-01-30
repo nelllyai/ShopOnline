@@ -54,7 +54,7 @@ buttons.forEach((btn, index) => {
 });
 ;// CONCATENATED MODULE: ./src/js/modules/catalog.js
 const getCategories = async () => {
-  const result = await fetch(`http://shorthaired-veiled-fascinator.glitch.me/api/category`);
+  const result = await fetch(`https://shorthaired-veiled-fascinator.glitch.me/api/category`);
   const list = await result.json();
   return list;
 };
