@@ -461,7 +461,6 @@ placeCart();
 
 const placeProfit = async () => {
   const container = document.querySelector('.profit__container');
-  container.style.display = 'none';
   const items = await getGoodsOnSale();
   const title = document.createElement('h2');
   title.className = 'subtitle';
