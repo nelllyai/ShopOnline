@@ -1,3 +1,5 @@
+import { calculateCredit, calculatePriceWithDiscount, format } from "./calculations.js";
+
 const getImageSrc = image => {
   if (image === 'image/notimage.jpg') {
     return './img/no-image.png';
@@ -19,7 +21,7 @@ export const createCard = ({ id, title, price, discount, image }) => {
     </div>
   
     <div class="card__price">
-      <p class="card__new-price">${price - price * discount / 100} ₽</p>
+      <p class="card__new-price">${format(calculatePriceWithDiscount(price, 1, discount))} ₽</p>
       ${discount > 0 ? `
       <p class="card__old-price">
         <span class="visually-hidden">Старая цена</span>${price} ₽
@@ -48,7 +50,7 @@ export const createProductWrapper = ({ title, price, discount, image }) => {
 
     <div class="product__info">
       <div class="product__price">
-        <p class="product__new-price">${price - price * discount / 100} ₽</p>
+        <p class="product__new-price">${format(calculatePriceWithDiscount(price, 1, discount))}</p>
         ${discount > 0 ? `
         <p class="product__old-price">
           <span class="visually-hidden">Старая цена</span>${price} ₽
@@ -56,7 +58,7 @@ export const createProductWrapper = ({ title, price, discount, image }) => {
         ` : ``}
       </div>
 
-      <p class="product__credit">В кредит от 5600 ₽ </p>
+      <p class="product__credit">В кредит от ${format(calculateCredit(price, 1))}</p>
 
       <div class="product__control">
         <button class="button product__to-cart">Добавить в корзину</button>
@@ -120,7 +122,7 @@ export const createCartProduct = ({ id, title, price, discount, image }, count) 
       <div class="composition__wrapper">
         <div class="composition__column composition__column_price composition__column_price_tablet">
           <div class="composition__new-price">
-            ${(count * (price - price * discount / 100)).toFixed(2)}&nbsp;₽
+            ${format(calculatePriceWithDiscount(price, count, discount))}
           </div>
           ${discount > 0 ? `
           <div class="composition__old-price">
@@ -128,7 +130,7 @@ export const createCartProduct = ({ id, title, price, discount, image }, count) 
           </div>` : ``
           }
           <div class="composition__credit">
-            В кредит от&nbsp;${(count * price * 0.05).toFixed(2)}&nbsp;₽
+            В кредит от&nbsp;${format(calculateCredit(price, count))}
           </div>
         </div>
         <h3 class="composition__product-title">${title}</h3>
@@ -143,18 +145,33 @@ export const createCartProduct = ({ id, title, price, discount, image }, count) 
 
     <div class="composition__column composition__column_price composition__column_price_pc">
       <div class="composition__new-price">
-        ${(count * (price - price * discount / 100)).toFixed(2)}&nbsp;₽
+        ${format(calculatePriceWithDiscount(price, count, discount))}
       </div>
       ${discount > 0 ? `
       <div class="composition__old-price">
-        ${count * price}&nbsp;₽
+        ${(count * price).toFixed(2)}&nbsp;₽
       </div>` : ``
       }
       <div class="composition__credit">
-        В кредит от&nbsp;${(count * price * 0.05).toFixed(2)}&nbsp;₽
+        В кредит от&nbsp;${format(calculateCredit(price, count))}
       </div>
     </div>
   `;
 
+  return li;
+};
+
+export const createProductPreview = ({title, image}) => {
+  const li = document.createElement('li');
+  li.className = 'composition__product';
+
+  const img = document.createElement('img');
+  img.alt = title;
+  img.classList.add('composition__product-image', 'composition__product-image_small');
+
+  const imgSrc = getImageSrc(image);
+  img.src = imgSrc;
+
+  li.append(img);
   return li;
 };

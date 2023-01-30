@@ -1,7 +1,8 @@
-import { createCartProduct } from "./createElements.js";
+import { createCartProduct, createProductPreview } from "./createElements.js";
 import { getProduct } from "./getGoods.js";
 import { getStorage } from "./storageControl.js";
 import { addBtnControl, delBtnControl, getProductById } from "./control.js";
+import { calculateCredit, calculateDiscount, calculatePriceWithDiscount, calculatePriceWithoutDiscount, format } from "./calculations.js";
 
 const isCartEmpty = () => {
   const items = getStorage('cart');
@@ -30,31 +31,40 @@ const getActualGoodsInfo = async items => {
 const getTotal = async items => {
   const actualGoods = await getActualGoodsInfo(items);
 
-  let totalPrice = 0;
-  let totalQuantity = 0;
-  let totalDiscount = 0;
+  let totalPrice = 0,
+    totalQuantity = 0,
+    totalDiscount = 0,
+    totalWithoutDiscount = 0;
 
   actualGoods.forEach(product => {
-    totalPrice += product.quantity * (product.info.price - product.info.price * product.info.discount / 100);
-    totalQuantity += product.quantity;
-    totalDiscount += product.quantity * (product.info.price * product.info.discount / 100);
+    const {price, discount} = product.info;
+    const quantity = product.quantity;
+
+    totalPrice += calculatePriceWithDiscount(price, quantity, discount);
+    totalQuantity += quantity;
+    totalWithoutDiscount += calculatePriceWithoutDiscount(price, quantity);
+    totalDiscount += calculateDiscount(price, quantity, discount);
   });
 
-  return { totalPrice, totalQuantity, totalDiscount };
+  return { totalPrice, totalQuantity, totalWithoutDiscount, totalDiscount };
 };
 
 const updateTotalBlock = async () => {
   const newItems = getStorage('cart');
-  const { totalPrice, totalQuantity, totalDiscount } = await getTotal(newItems);
+  const { totalPrice, totalQuantity, totalWithoutDiscount, totalDiscount } = await getTotal(newItems);
+  console.log(totalPrice);
 
   const totalPriceWrapper = document.querySelector('.composition__cost');
-  totalPriceWrapper.textContent = `${(totalPrice || 0).toFixed(2)}\xa0₽`;
+  totalPriceWrapper.textContent = format(totalPrice);
 
   const totalQuantityWrapper = document.querySelector('.composition__info-title_goods');
   totalQuantityWrapper.textContent = `Товары, ${totalQuantity} шт.`;
 
+  const totalWithoutDiscountWrapper = document.querySelector('.composition__info_without-discount');
+  totalWithoutDiscountWrapper.textContent = format(totalWithoutDiscount);
+
   const totalDiscountWrapper = document.querySelector('.composition__info_discount');
-  totalDiscountWrapper.textContent = `${(totalDiscount || 0).toFixed(2)}\xa0₽`;
+  totalDiscountWrapper.textContent = format(totalDiscount);
 };
 
 const placeCart = async () => {
@@ -73,6 +83,10 @@ const placeCart = async () => {
 
   const allItems = goods.map(product => createCartProduct(product.info, product.quantity));
   list.append(...allItems);
+
+  const previewsContainer = document.querySelector('.composition__goods');
+  const previews = goods.map(product => createProductPreview(product.info));
+  previewsContainer.append(...previews);
 
   container.append(list);
   await updateTotalBlock();
@@ -112,16 +126,15 @@ const placeCart = async () => {
 
         const priceWrappers = listElement.querySelectorAll('.composition__new-price');
         priceWrappers.forEach(elem =>
-          elem.textContent = `${(count * (price - price * discount / 100)).toFixed(2)}\xa0₽`);
+          elem.textContent = format(calculatePriceWithDiscount(price, count, discount)));
 
         const oldPriceWrappers = listElement.querySelectorAll('.composition__old-price');
         oldPriceWrappers.forEach(elem =>
-          elem.textContent = `${(count * price).toFixed(2)}\xa0₽`);
+          elem.textContent = format(calculatePriceWithoutDiscount(price, count)));
 
         const creditWrappers = listElement.querySelectorAll('.composition__credit');
-        creditWrappers.forEach(elem => {
-          elem.textContent = `В кредит от\xa0${(count * price * 0.05).toFixed(2)}\xa0₽`;
-        });
+        creditWrappers.forEach(elem =>
+          elem.textContent = `В кредит от\xa0${format(calculateCredit(price, count))}`);
       }
     });
   });

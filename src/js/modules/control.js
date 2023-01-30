@@ -1,3 +1,4 @@
+import { updateIconCart } from "./iconCart.js";
 import { addStorage, editStorage, getStorage, removeStorage } from "./storageControl.js";
 
 export const getProductById = id => {
@@ -17,6 +18,8 @@ export const addBtnControl = (btn, id) => {
         quantity: 1
       });
     }
+
+    updateIconCart();
   });
 };
 
@@ -30,4 +33,6 @@ export const delBtnControl = (btn, id) => {
       removeStorage('cart', id);
     }
   });
+  
+  updateIconCart();
 };
