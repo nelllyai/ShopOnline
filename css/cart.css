@@ -1149,9 +1149,6 @@ input {
 .footer {
   background-color: #2D2D2D;
   color: #fff;
-}
-
-.footer__container {
   padding-top: 80px;
   padding-bottom: 180px;
 }
@@ -1331,7 +1328,7 @@ input {
     gap: 50px 20px;
   }
 
-  .footer__container {
+  .footer {
     padding-top: 60px;
     padding-bottom: 45px;
   }
@@ -1784,7 +1781,7 @@ input {
     line-height: 120%;
   }
 
-  .footer__container {
+  .footer {
     padding-top: 30px;
     padding-bottom: 20px;
   }

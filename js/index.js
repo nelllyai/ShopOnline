@@ -265,14 +265,14 @@ const createCartProduct = ({
   price,
   discount,
   image
-}, count) => {
+}, count, isChecked) => {
   const li = document.createElement('li');
   li.className = 'composition__full-product';
   li.dataset.id = id;
   const imgSrc = getImageSrc(image);
   li.innerHTML = `
     <div class="composition__column composition__column_item">
-      <input type="checkbox" class="composition__checkbox composition__checkbox_item" checked>
+      <input type="checkbox" class="composition__checkbox composition__checkbox_item" ${isChecked ? 'checked' : ''}>
       <img src="${imgSrc}" alt="${title}" class="composition__product-image">
 
       <div class="composition__wrapper">
