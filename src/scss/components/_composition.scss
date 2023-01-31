@@ -123,9 +123,7 @@
 
   &__hr {
     margin-bottom: 20px;
-    height: 1px;
-    border: 0;
-    background-color: $main-gray--light;
+    @extend %hr;
 
     @include phone {
       margin-bottom: 15px;
