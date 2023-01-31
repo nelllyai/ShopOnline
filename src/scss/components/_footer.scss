@@ -2,20 +2,19 @@
   background-color: $text-color;
   color: $white;
 
-  &__container {
-    padding-top: 80px;
-    padding-bottom: 180px;
+  padding-top: 80px;
+  padding-bottom: 180px;
 
-    @include laptop {
-      padding-top: 60px;
-      padding-bottom: 45px;
-    }
-
-    @include break(680px) {
-      padding-top: 30px;
-      padding-bottom: 20px;
-    }
+  @include laptop {
+    padding-top: 60px;
+    padding-bottom: 45px;
   }
+
+  @include break(680px) {
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+
 
   &__columns {
     display: flex;
@@ -35,7 +34,7 @@
 
   &__title {
     color: $white;
-    
+
     @include laptop {
       margin-bottom: 60px;
       flex-basis: 100%;
@@ -180,7 +179,7 @@
       font-size: 10px;
     }
   }
-  
+
   &__design-author {
     margin-bottom: 10px;
   }
