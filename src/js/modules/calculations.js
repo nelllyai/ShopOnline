@@ -1,5 +1,5 @@
 export const format = number => {
-  return `${Math.round(number)}\xa0₽`;
+  return `${Math.round(number * 100) / 100}\xa0₽`;
 };
 
 export const calculateDiscount = (price, quantity, discount) => {

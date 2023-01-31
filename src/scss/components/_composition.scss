@@ -103,8 +103,21 @@
   }
 
   &__delete {
-    @include tablet {
+    &_item {
       display: none;
+    }
+
+    @include tablet {
+      &_all {
+        display: none;
+      }
+
+      &_item {
+        display: block;
+        margin-left: auto;
+        width: 14px;
+        height: 18px;
+      }
     }
   }
 
@@ -127,7 +140,7 @@
 
   &__full-product {
     display: grid;
-    grid-template-columns: 1fr 110px 145px;
+    grid-template-columns: 1fr 110px 160px;
     gap: 140px;
 
     @include break(1690px) {
@@ -141,6 +154,17 @@
 
     @include tablet {
       display: block;
+
+      &:not(:last-child) {
+        padding-bottom: 20px;
+        border-bottom: 1px solid $main-gray--light;
+      }
+    }
+
+    @include phone {
+      &:not(:last-child) {
+        padding-bottom: 15px;
+      }
     }
   }
 

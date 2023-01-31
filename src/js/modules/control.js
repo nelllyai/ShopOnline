@@ -1,5 +1,5 @@
 import { updateIconCart } from "./iconCart.js";
-import { addStorage, editStorage, getStorage, removeStorage } from "./storageControl.js";
+import { addStorage, clearStorage, editStorage, getStorage, removeStorage } from "./storageControl.js";
 
 export const getProductById = id => {
   const cart = getStorage('cart');
@@ -32,7 +32,21 @@ export const delBtnControl = (btn, id) => {
     } else {
       removeStorage('cart', id);
     }
+
+    updateIconCart();
   });
-  
-  updateIconCart();
+};
+
+export const delAllBtnControl = btn => {
+  btn.addEventListener('click', () => {
+    clearStorage('cart');
+    updateIconCart();
+  });
+};
+
+export const delItemBtnControl = (btn, id) => {
+  btn.addEventListener('click', () => {
+    removeStorage('cart', id);
+    updateIconCart();
+  });
 };

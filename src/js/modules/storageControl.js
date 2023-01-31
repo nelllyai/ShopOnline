@@ -18,3 +18,7 @@ export const editStorage = (key, id, field, text) => {
   data[index][field] = text;
   localStorage.setItem(key, JSON.stringify(data));
 };
+
+export const clearStorage = key => {
+  localStorage.removeItem(key);
+};
