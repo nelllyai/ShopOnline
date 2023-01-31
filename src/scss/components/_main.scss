@@ -13,6 +13,10 @@
 
   padding: 40px 0 150px;
 
+  &__container {
+    position: relative;
+  }
+
   &__list {
     display: flex;
     justify-content: space-around;

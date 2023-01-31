@@ -1,3 +1,5 @@
+import preload from "./preload.js";
+
 const getArticles = async () => {
   const page = window.location.search;
   const result = await fetch(`https://gorest.co.in/public-api/posts${page}`);
@@ -5,9 +7,8 @@ const getArticles = async () => {
   return info.data;
 };
 
-const renderArticles = async () => {
+const renderArticles = async (listWrapper) => {
   const data = await getArticles();
-  const listWrapper = document.querySelector('.main__container');
   const list = document.createElement('div');
   list.className = 'main__list';
 
@@ -109,5 +110,9 @@ const renderNavigation = async () => {
   nextArrow.href = `blog.html?page=${currentPage + 1}`;
 };
 
-renderArticles();
-renderNavigation();
+const listWrapper = document.querySelector('.main__container');
+
+preload.show(listWrapper);
+renderArticles(listWrapper)
+  .then(() => renderNavigation())
+  .then(() => preload.remove());

@@ -1,0 +1,47 @@
+.overlay {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 1315px;
+  width: 100%;
+
+  &_small {
+    @include phone {
+      height: 350px;
+    }
+  }
+
+  @include laptop {
+    height: 940px;
+  }
+
+  @include break(1000px) {
+    height: 1790px;
+  }
+
+  @include tablet {
+    height: 1670px;
+  }
+
+  @include phone {
+    height: 774px;
+  }
+}
+
+.overlay__arrows {
+  position: absolute;
+  top: calc(50% - 120px / 2);
+  left: calc(50% - 165px / 2);
+  animation: rotation 2s infinite;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}

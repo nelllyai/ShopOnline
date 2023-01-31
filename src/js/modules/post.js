@@ -1,3 +1,6 @@
+import { renderAdvertisement } from "./render.js";
+import preload from "./preload.js";
+
 const getArticle = async () => {
   const id = window.location.search.replace('?id=', '');
   const result = await fetch(`https://gorest.co.in/public-api/posts/${id}`);
@@ -11,14 +14,13 @@ const getUser = async (id) => {
   return info.data;
 };
 
-const renderPost = async () => {
+const renderPost = async (postContainer) => {
   const {title, body, ['user_id']: userId} = await getArticle();
   const {name: author} = await getUser(userId);
 
   const postNavigation = document.querySelector('.navigation-chain__item:last-child');
   postNavigation.textContent = title;
   
-  const postContainer = document.querySelector('.post__container');
   const post = document.createElement('div');
   post.className = 'post__wrapper';
 
@@ -45,4 +47,9 @@ const renderPost = async () => {
   postContainer.prepend(post);
 };
 
-renderPost();
+const postContainer = document.querySelector('.post__container');
+
+preload.showSmall(postContainer);
+renderPost(postContainer)
+  .then(() => renderAdvertisement(postContainer))
+  .then(() => preload.remove());
