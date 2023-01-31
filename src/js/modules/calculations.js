@@ -1,5 +1,5 @@
 export const format = number => {
-  return `${number.toFixed(2)}\xa0₽`;
+  return `${Math.round(number)}\xa0₽`;
 };
 
 export const calculateDiscount = (price, quantity, discount) => {

@@ -21,7 +21,7 @@ export const createCard = ({ id, title, price, discount, image }) => {
     </div>
   
     <div class="card__price">
-      <p class="card__new-price">${format(calculatePriceWithDiscount(price, 1, discount))} ₽</p>
+      <p class="card__new-price">${format(calculatePriceWithDiscount(price, 1, discount))}</p>
       ${discount > 0 ? `
       <p class="card__old-price">
         <span class="visually-hidden">Старая цена</span>${price} ₽

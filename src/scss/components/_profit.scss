@@ -23,11 +23,11 @@
       gap: 50px 20px;
     }
 
-    @include tablet {
+    @include break(860px) {
       gap: 40px 20px;
     }
 
-    @include phone {
+    @include break(690px) {
       grid-template-columns: repeat(2, 1fr);
       gap: 30px 20px;
     }
