@@ -89,7 +89,75 @@ const renderCategories = async () => {
   menuList.append(...categories.map(createMenuElement));
 };
 renderCategories();
+;// CONCATENATED MODULE: ./src/js/modules/render.js
+
+
+const renderRecommendations = async (container, {
+  category
+}) => {
+  const items = await getGoodsByCategory(category);
+  const title = document.createElement('h2');
+  title.classList.add('subtitle', 'recommendation__title');
+  title.textContent = 'Рекомендуем также';
+  const ul = document.createElement('ul');
+  ul.className = 'recommendation__list';
+  const allItems = items.map(createCard);
+  ul.append(...allItems);
+  container.append(title, ul);
+};
+const renderProductBreadcrumbs = (categoryElement, titleElement, {
+  title,
+  category
+}) => {
+  const categoryLink = document.createElement('a');
+  categoryLink.className = 'navigation-chain__link';
+  categoryLink.href = 'category.html?search=' + category;
+  categoryLink.textContent = category;
+  titleElement.textContent = title;
+  categoryElement.append(categoryLink);
+};
+const renderAdvertisement = container => {
+  const aside = document.createElement('aside');
+  aside.className = 'advertisement';
+  aside.innerHTML = `
+    <div class="advertisement__item advertisement__item_tour">
+      <p class="advertisement__title">Горящие туры в&nbsp;Стамбул от&nbsp;20&nbsp;000 руб.</p>
+      <p class="advertisement__info">Окунись в настоящую восточную сказку</p>
+    </div>
+
+    <div class="advertisement__item advertisement__item_car">
+      <p class="advertisement__title">Новый RENAULT DUSTER</p>
+      <p class="advertisement__info">Легендарный внедорожник в новом дизайне</p>
+    </div>
+  `;
+  container.append(aside);
+};
+;// CONCATENATED MODULE: ./src/js/modules/preload.js
+const preload = {
+  arrows: `
+    <div class="overlay__arrows">
+      <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M142.5 60L112.5 90H135C135 114.825 114.825 135 90 135C82.425 135 75.225 133.125 69 129.75L58.05 140.7C67.275 146.55 78.225 150 90 150C123.15 150 150 123.15 150 90H172.5L142.5 60ZM45 90C45 65.175 65.175 45 90 45C97.575 45 104.775 46.875 111 50.25L121.95 39.3C112.725 33.45 101.775 30 90 30C56.85 30 30 56.85 30 90H7.5L37.5 120L67.5 90H45Z" fill="black"/>
+      </svg>
+    </div>`,
+  overlay: document.createElement('div'),
+  show(container) {
+    this.overlay.classList.add('overlay');
+    this.overlay.innerHTML = this.arrows;
+    container.append(this.overlay);
+  },
+  showSmall(container) {
+    this.overlay.classList.add('overlay', 'overlay__small');
+    this.overlay.innerHTML = this.arrows;
+    container.append(this.overlay);
+  },
+  remove() {
+    this.overlay.remove();
+  }
+};
+/* harmony default export */ const modules_preload = (preload);
 ;// CONCATENATED MODULE: ./src/js/modules/post.js
+
+
 const getArticle = async () => {
   const id = window.location.search.replace('?id=', '');
   const result = await fetch(`https://gorest.co.in/public-api/posts/${id}`);
@@ -101,7 +169,7 @@ const getUser = async id => {
   const info = await result.json();
   return info.data;
 };
-const renderPost = async () => {
+const renderPost = async postContainer => {
   const {
     title,
     body,
@@ -112,7 +180,6 @@ const renderPost = async () => {
   } = await getUser(userId);
   const postNavigation = document.querySelector('.navigation-chain__item:last-child');
   postNavigation.textContent = title;
-  const postContainer = document.querySelector('.post__container');
   const post = document.createElement('div');
   post.className = 'post__wrapper';
   post.innerHTML = `
@@ -136,7 +203,9 @@ const renderPost = async () => {
   `;
   postContainer.prepend(post);
 };
-renderPost();
+const postContainer = document.querySelector('.post__container');
+modules_preload.showSmall(postContainer);
+renderPost(postContainer).then(() => renderAdvertisement(postContainer)).then(() => modules_preload.remove());
 ;// CONCATENATED MODULE: ./src/js/article.js
 
 

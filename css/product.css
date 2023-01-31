@@ -1,3 +1,9 @@
+.product__hr {
+  height: 1px;
+  border: 0;
+  background-color: #E8E8E8;
+}
+
 @font-face {
   font-family: Lato;
   font-weight: 400;
@@ -791,6 +797,10 @@ input {
   padding: 40px 0 150px;
 }
 
+.main__container {
+  position: relative;
+}
+
 .main__list {
   display: flex;
   justify-content: space-around;
@@ -809,9 +819,6 @@ input {
 
 .product__hr {
   margin-bottom: 40px;
-  height: 1px;
-  border: 0;
-  background-color: #E8E8E8;
 }
 
 .product__wrapper {

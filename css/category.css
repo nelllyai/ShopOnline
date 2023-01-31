@@ -791,6 +791,10 @@ input {
   padding: 40px 0 150px;
 }
 
+.main__container {
+  position: relative;
+}
+
 .main__list {
   display: flex;
   justify-content: space-around;
