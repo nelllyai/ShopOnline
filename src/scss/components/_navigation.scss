@@ -11,6 +11,16 @@
   &__arrow {
     color: $main-blue;
 
+    &:focus {
+      outline: none;
+      color: $main-blue--dark;
+    }
+
+    &:hover,
+    &:active {
+      color: $main-blue--light;
+    }
+
     &_disabled {
       color: $text-color;
       pointer-events: none;
@@ -43,6 +53,18 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 130%;
+
+    &:focus {
+      outline: none;
+      border-color: $main-blue--dark;
+      color: $main-blue--dark;
+    }
+
+    &:hover,
+    &:active {
+      border-color: $main-blue;
+      color: $main-blue;
+    }
 
     &_active {
       border-color: $main-blue;

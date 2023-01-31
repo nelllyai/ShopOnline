@@ -255,6 +255,15 @@
   &__to-favourite {
     width: 28px;
     height: 25px;
+    color: $main-blue;
+
+    &:focus {
+      color: $text-color
+    }
+
+    &:active {
+      color: $attention;
+    }
 
     @include phone {
       width: 20px;
@@ -319,7 +328,7 @@
         width: 17px;
         height: 18px;
       }
-  
+
       @include phone {
         width: 10px;
         height: 11px;

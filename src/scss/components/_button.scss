@@ -1,3 +1,13 @@
 .button {
   background-color: $main-blue;
+  transition: background-color 0.1s ease-in-out;
+
+  &:focus {
+    background-color: $main-blue--dark;
+  }
+
+  &:hover,
+  &:active {
+    background-color: $main-blue--light;
+  }
 }

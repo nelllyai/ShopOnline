@@ -10,6 +10,7 @@ export const getImageSrc = image => {
 export const createCard = ({ id, title, price, discount, image }) => {
   const li = document.createElement('li');
   li.className = 'card';
+  li.tabIndex = '0';
 
   const imgSrc = getImageSrc(image);
 
