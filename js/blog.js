@@ -20,6 +20,9 @@ const editStorage = (key, id, field, text) => {
   data[index][field] = text;
   localStorage.setItem(key, JSON.stringify(data));
 };
+const clearStorage = key => {
+  localStorage.removeItem(key);
+};
 ;// CONCATENATED MODULE: ./src/js/modules/iconCart.js
 
 const updateIconCart = () => {
@@ -161,6 +164,24 @@ const renderNavigation = async () => {
   const {
     pages
   } = await getPages();
+  const navigation = document.createElement('div');
+  navigation.className = 'navigation';
+  navigation.innerHTML = `
+    <a class="navigation__arrow navigation__arrow_prev">
+      <svg width="29" height="19" viewBox="0 0 29 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M28.375 7.95833H6.52958L12.0487 2.42375L9.875 0.25L0.625 9.5L9.875 18.75L12.0487 16.5763L6.52958 11.0417H28.375V7.95833Z" />
+      </svg>
+    </a>
+    <div class="navigation__buttons-group"></div>
+    <a class="navigation__arrow navigation__arrow_next">
+      <svg width="29" height="19" viewBox="0 0 29 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M0.625 7.95833H22.4704L16.9513 2.42375L19.125 0.25L28.375 9.5L19.125 18.75L16.9513 16.5763L22.4704 11.0417H0.625V7.95833Z" />
+      </svg>
+    </a>
+  `;
+  document.querySelector('.main__container').append(navigation);
   const btnsGroup = document.querySelector('.navigation__buttons-group');
   const prevArrow = document.querySelector('.navigation__arrow_prev');
   const nextArrow = document.querySelector('.navigation__arrow_next');

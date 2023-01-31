@@ -20,6 +20,9 @@ const storageControl_editStorage = (key, id, field, text) => {
   data[index][field] = text;
   localStorage.setItem(key, JSON.stringify(data));
 };
+const storageControl_clearStorage = key => {
+  localStorage.removeItem(key);
+};
 ;// CONCATENATED MODULE: ./src/js/modules/iconCart.js
 
 const iconCart_updateIconCart = () => {
@@ -88,7 +91,7 @@ const renderCategories = async () => {
 renderCategories();
 ;// CONCATENATED MODULE: ./src/js/modules/calculations.js
 const calculations_format = number => {
-  return `${number.toFixed(2)}\xa0₽`;
+  return `${Math.round(number * 100) / 100}\xa0₽`;
 };
 const calculateDiscount = (price, quantity, discount) => {
   return quantity * (price * discount / 100);
@@ -131,8 +134,20 @@ const delBtnControl = (btn, id) => {
     } else {
       removeStorage('cart', id);
     }
+    updateIconCart();
   });
-  updateIconCart();
+};
+const delAllBtnControl = btn => {
+  btn.addEventListener('click', () => {
+    clearStorage('cart');
+    updateIconCart();
+  });
+};
+const delItemBtnControl = (btn, id) => {
+  btn.addEventListener('click', () => {
+    removeStorage('cart', id);
+    updateIconCart();
+  });
 };
 ;// CONCATENATED MODULE: ./src/js/modules/createElements.js
 
@@ -151,6 +166,7 @@ const createCard = ({
 }) => {
   const li = document.createElement('li');
   li.className = 'card';
+  li.tabIndex = '0';
   const imgSrc = getImageSrc(image);
   li.innerHTML = `
   <a href="product.html?id=${id}" class="card__link">
@@ -160,7 +176,7 @@ const createCard = ({
     </div>
   
     <div class="card__price">
-      <p class="card__new-price">${calculations_format(calculations_calculatePriceWithDiscount(price, 1, discount))} ₽</p>
+      <p class="card__new-price">${calculations_format(calculations_calculatePriceWithDiscount(price, 1, discount))}</p>
       ${discount > 0 ? `
       <p class="card__old-price">
         <span class="visually-hidden">Старая цена</span>${price} ₽
@@ -186,7 +202,7 @@ const createCartProduct = ({
   const imgSrc = getImageSrc(image);
   li.innerHTML = `
     <div class="composition__column composition__column_item">
-      <input type="checkbox" class="composition__checkbox">
+      <input type="checkbox" class="composition__checkbox composition__checkbox_item" checked>
       <img src="${imgSrc}" alt="${title}" class="composition__product-image">
 
       <div class="composition__wrapper">
@@ -196,7 +212,7 @@ const createCartProduct = ({
           </div>
           ${discount > 0 ? `
           <div class="composition__old-price">
-            ${(count * price).toFixed(2)}&nbsp;₽
+            ${count * price}&nbsp;₽
           </div>` : ``}
           <div class="composition__credit">
             В кредит от&nbsp;${format(calculateCredit(price, count))}
@@ -207,9 +223,17 @@ const createCartProduct = ({
     </div>
 
     <div class="composition__column composition__column_counter">
-      <button class="composition__count-button composition__count-button_minus">-</button>
-      <p class="composition__quantity">${count}</p>
-      <button class="composition__count-button composition__count-button_plus">+</button>
+        <button class="composition__count-button composition__count-button_minus">-</button>
+        <p class="composition__quantity">${count}</p>
+        <button class="composition__count-button composition__count-button_plus">+</button>
+
+        <button class="composition__delete composition__delete_item">
+          <svg width="18" height="24" viewBox="0 0 18 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M13.0214 2.35355L13.1679 2.5H13.375H17.25V4H0.75V2.5H4.625H4.83211L4.97855 2.35355L6.08211 1.25H11.9179L13.0214 2.35355ZM4 22.75C2.90114 22.75 2 21.8489 2 20.75V6.25H16V20.75C16 21.8489 15.0989 22.75 14 22.75H4Z"
+              fill="#C9C9C9" stroke="#C9C9C9" />
+          </svg>
+        </button>
     </div>
 
     <div class="composition__column composition__column_price composition__column_price_pc">
@@ -218,7 +242,7 @@ const createCartProduct = ({
       </div>
       ${discount > 0 ? `
       <div class="composition__old-price">
-        ${(count * price).toFixed(2)}&nbsp;₽
+        ${count * price}&nbsp;₽
       </div>` : ``}
       <div class="composition__credit">
         В кредит от&nbsp;${format(calculateCredit(price, count))}
@@ -228,11 +252,13 @@ const createCartProduct = ({
   return li;
 };
 const createProductPreview = ({
+  id,
   title,
   image
 }) => {
   const li = document.createElement('li');
   li.className = 'composition__product';
+  li.dataset.id = id;
   const img = document.createElement('img');
   img.alt = title;
   img.classList.add('composition__product-image', 'composition__product-image_small');

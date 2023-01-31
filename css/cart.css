@@ -430,6 +430,10 @@ button {
   cursor: pointer;
 }
 
+button:focus {
+  outline: none;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -477,6 +481,16 @@ input {
 
 .button {
   background-color: #3670C7;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.button:focus {
+  background-color: #3B65A5;
+}
+
+.button:hover,
+.button:active {
+  background-color: #5D92E0;
 }
 
 .svg {
@@ -635,6 +649,16 @@ input {
   color: #3670C7;
 }
 
+.navigation__arrow:focus {
+  outline: none;
+  color: #3B65A5;
+}
+
+.navigation__arrow:hover,
+.navigation__arrow:active {
+  color: #5D92E0;
+}
+
 .navigation__arrow_disabled {
   color: #2D2D2D;
   pointer-events: none;
@@ -652,6 +676,18 @@ input {
   font-weight: 700;
   font-size: 16px;
   line-height: 130%;
+}
+
+.navigation__button:focus {
+  outline: none;
+  border-color: #3B65A5;
+  color: #3B65A5;
+}
+
+.navigation__button:hover,
+.navigation__button:active {
+  border-color: #3670C7;
+  color: #3670C7;
 }
 
 .navigation__button_active {
@@ -807,6 +843,10 @@ input {
   line-height: 130%;
 }
 
+.composition__delete_item {
+  display: none;
+}
+
 .composition__hr {
   margin-bottom: 20px;
   height: 1px;
@@ -822,7 +862,7 @@ input {
 
 .composition__full-product {
   display: grid;
-  grid-template-columns: 1fr 110px 145px;
+  grid-template-columns: 1fr 110px 160px;
   gap: 140px;
 }
 
@@ -885,6 +925,15 @@ input {
   font-size: 16px;
   line-height: 130%;
   color: #8F8F8F;
+}
+
+.composition__count-button:focus {
+  border-color: #3670C7;
+}
+
+.composition__count-button:hover,
+.composition__count-button:active {
+  border-color: #2D2D2D;
 }
 
 .composition__quantity {
@@ -1350,6 +1399,41 @@ input {
   }
 }
 
+@media (max-width: 860px) {
+  .profit__list {
+    gap: 40px 20px;
+  }
+
+  .card__image-wrapper {
+    margin-bottom: 15px;
+  }
+
+  .card__image {
+    height: 216px;
+  }
+
+  .card__discount {
+    left: 10px;
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+  }
+
+  .card__new-price {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .card__old-price {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .card__product {
+    font-size: 18px;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 35px;
@@ -1497,12 +1581,24 @@ input {
     font-size: 14px;
   }
 
-  .composition__delete {
+  .composition__delete_all {
     display: none;
+  }
+
+  .composition__delete_item {
+    display: block;
+    margin-left: auto;
+    width: 14px;
+    height: 18px;
   }
 
   .composition__full-product {
     display: block;
+  }
+
+  .composition__full-product:not(:last-child) {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E8E8E8;
   }
 
   .composition__column_item {
@@ -1629,38 +1725,42 @@ input {
   .profit {
     padding-top: 30px;
   }
+}
 
+@media (max-width: 690px) {
   .profit__list {
-    gap: 40px 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 20px;
   }
 
   .card__image-wrapper {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   .card__image {
-    height: 216px;
+    height: 130px;
   }
 
   .card__discount {
-    left: 10px;
-    width: 60px;
-    height: 60px;
-    font-size: 20px;
+    left: 5px;
+    bottom: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
   }
 
   .card__new-price {
-    font-size: 22px;
-    line-height: 26px;
-  }
-
-  .card__old-price {
     font-size: 16px;
     line-height: 19px;
   }
 
+  .card__old-price {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
   .card__product {
-    font-size: 18px;
+    font-size: 12px;
   }
 }
 
@@ -1916,6 +2016,10 @@ input {
     margin-bottom: 15px;
   }
 
+  .composition__full-product:not(:last-child) {
+    padding-bottom: 15px;
+  }
+
   .composition__column_price_tablet {
     flex-wrap: wrap;
     row-gap: 0;
@@ -1973,40 +2077,5 @@ input {
 
   .profit {
     padding-top: 35px;
-  }
-
-  .profit__list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px 20px;
-  }
-
-  .card__image-wrapper {
-    margin-bottom: 10px;
-  }
-
-  .card__image {
-    height: 130px;
-  }
-
-  .card__discount {
-    left: 5px;
-    bottom: 15px;
-    width: 40px;
-    height: 40px;
-    font-size: 12px;
-  }
-
-  .card__new-price {
-    font-size: 16px;
-    line-height: 19px;
-  }
-
-  .card__old-price {
-    font-size: 12px;
-    line-height: 14px;
-  }
-
-  .card__product {
-    font-size: 12px;
   }
 }

@@ -20,6 +20,9 @@ const editStorage = (key, id, field, text) => {
   data[index][field] = text;
   localStorage.setItem(key, JSON.stringify(data));
 };
+const clearStorage = key => {
+  localStorage.removeItem(key);
+};
 ;// CONCATENATED MODULE: ./src/js/modules/iconCart.js
 
 const updateIconCart = () => {

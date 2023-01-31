@@ -430,6 +430,10 @@ button {
   cursor: pointer;
 }
 
+button:focus {
+  outline: none;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -477,6 +481,16 @@ input {
 
 .button {
   background-color: #3670C7;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.button:focus {
+  background-color: #3B65A5;
+}
+
+.button:hover,
+.button:active {
+  background-color: #5D92E0;
 }
 
 .title {
@@ -1364,6 +1378,41 @@ input {
   }
 }
 
+@media (max-width: 860px) {
+  .profit__list {
+    gap: 40px 20px;
+  }
+
+  .card__image-wrapper {
+    margin-bottom: 15px;
+  }
+
+  .card__image {
+    height: 216px;
+  }
+
+  .card__discount {
+    left: 10px;
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+  }
+
+  .card__new-price {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .card__old-price {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .card__product {
+    font-size: 18px;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 35px;
@@ -1584,38 +1633,42 @@ input {
   .profit {
     padding-top: 30px;
   }
+}
 
+@media (max-width: 690px) {
   .profit__list {
-    gap: 40px 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 20px;
   }
 
   .card__image-wrapper {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   .card__image {
-    height: 216px;
+    height: 130px;
   }
 
   .card__discount {
-    left: 10px;
-    width: 60px;
-    height: 60px;
-    font-size: 20px;
+    left: 5px;
+    bottom: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
   }
 
   .card__new-price {
-    font-size: 22px;
-    line-height: 26px;
-  }
-
-  .card__old-price {
     font-size: 16px;
     line-height: 19px;
   }
 
+  .card__old-price {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
   .card__product {
-    font-size: 18px;
+    font-size: 12px;
   }
 }
 
@@ -1954,40 +2007,5 @@ input {
 
   .profit {
     padding-top: 35px;
-  }
-
-  .profit__list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px 20px;
-  }
-
-  .card__image-wrapper {
-    margin-bottom: 10px;
-  }
-
-  .card__image {
-    height: 130px;
-  }
-
-  .card__discount {
-    left: 5px;
-    bottom: 15px;
-    width: 40px;
-    height: 40px;
-    font-size: 12px;
-  }
-
-  .card__new-price {
-    font-size: 16px;
-    line-height: 19px;
-  }
-
-  .card__old-price {
-    font-size: 12px;
-    line-height: 14px;
-  }
-
-  .card__product {
-    font-size: 12px;
   }
 }
