@@ -6,6 +6,13 @@ export const getProductById = id => {
   return cart.find(item => item.id === id);
 };
 
+export const checkboxControl = (checkbox, id) => {
+  checkbox.addEventListener('change', () => {
+    const isChecked = getProductById(id).checked;
+    editStorage('cart', id, 'checked', !isChecked);
+  });
+};
+
 export const addBtnControl = (btn, id) => {
   btn.addEventListener('click', () => {
     const product = getProductById(id);
@@ -15,7 +22,8 @@ export const addBtnControl = (btn, id) => {
     } else {
       addStorage('cart', {
         id,
-        quantity: 1
+        quantity: 1,
+        checked: true,
       });
     }
 

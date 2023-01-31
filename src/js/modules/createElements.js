@@ -37,7 +37,7 @@ export const createCard = ({ id, title, price, discount, image }) => {
   return li;
 };
 
-export const createCartProduct = ({ id, title, price, discount, image }, count) => {
+export const createCartProduct = ({ id, title, price, discount, image }, count, isChecked) => {
   const li = document.createElement('li');
   li.className = 'composition__full-product';
   li.dataset.id = id;
@@ -46,7 +46,7 @@ export const createCartProduct = ({ id, title, price, discount, image }, count) 
 
   li.innerHTML = `
     <div class="composition__column composition__column_item">
-      <input type="checkbox" class="composition__checkbox composition__checkbox_item" checked>
+      <input type="checkbox" class="composition__checkbox composition__checkbox_item" ${isChecked ? 'checked' : ''}>
       <img src="${imgSrc}" alt="${title}" class="composition__product-image">
 
       <div class="composition__wrapper">
