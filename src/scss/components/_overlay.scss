@@ -23,6 +23,14 @@
     height: 774px;
   }
 
+  &_middle {
+    height: 700px;
+
+    @include phone {
+      height: 500px;
+    }
+  }
+
   &_small {
     @include phone {
       height: 200px;

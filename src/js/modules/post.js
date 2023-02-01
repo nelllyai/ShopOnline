@@ -49,7 +49,7 @@ const renderPost = async (postContainer) => {
 
 const postContainer = document.querySelector('.post__container');
 
-preload.showSmall(postContainer);
+preload.showMiddle(postContainer);
 renderPost(postContainer)
   .then(() => renderAdvertisement(postContainer))
   .then(() => preload.remove());

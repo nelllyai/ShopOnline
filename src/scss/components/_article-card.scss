@@ -26,13 +26,17 @@
 
   &__image {
     float: left;
+    width: 195px;
+    height: 195px;
 
     @include laptop {
       width: 140px;
+      height: 140px;
     }
 
     @include phone {
       width: 60px;
+      height: 60px;
     }
   }
 
