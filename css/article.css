@@ -1248,6 +1248,10 @@ input {
   width: 100%;
 }
 
+.overlay_middle {
+  height: 700px;
+}
+
 .overlay__arrows {
   position: absolute;
   top: -webkit-calc(50% - 90px);
@@ -2073,6 +2077,10 @@ input {
 
   .overlay {
     height: 774px;
+  }
+
+  .overlay_middle {
+    height: 500px;
   }
 
   .overlay_small {

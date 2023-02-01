@@ -948,6 +948,8 @@ input {
 
 .article-card__image {
   float: left;
+  width: 195px;
+  height: 195px;
 }
 
 .article-card__title {
@@ -1126,6 +1128,10 @@ input {
   width: 100%;
 }
 
+.overlay_middle {
+  height: 700px;
+}
+
 .overlay__arrows {
   position: absolute;
   top: -webkit-calc(50% - 90px);
@@ -1297,6 +1303,7 @@ input {
 
   .article-card__image {
     width: 140px;
+    height: 140px;
   }
 
   .article-card__title {
@@ -1815,6 +1822,7 @@ input {
 
   .article-card__image {
     width: 60px;
+    height: 60px;
   }
 
   .article-card__title {
@@ -1851,6 +1859,10 @@ input {
 
   .overlay {
     height: 774px;
+  }
+
+  .overlay_middle {
+    height: 500px;
   }
 
   .overlay_small {

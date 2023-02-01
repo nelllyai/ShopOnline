@@ -145,6 +145,11 @@ const preload = {
     this.overlay.innerHTML = this.arrows;
     container.append(this.overlay);
   },
+  showMiddle(container) {
+    this.overlay.classList.add('overlay', 'overlay_middle');
+    this.overlay.innerHTML = this.arrows;
+    container.append(this.overlay);
+  },
   showSmall(container) {
     this.overlay.classList.add('overlay', 'overlay_small');
     this.overlay.innerHTML = this.arrows;
@@ -204,7 +209,7 @@ const renderPost = async postContainer => {
   postContainer.prepend(post);
 };
 const postContainer = document.querySelector('.post__container');
-modules_preload.showSmall(postContainer);
+modules_preload.showMiddle(postContainer);
 renderPost(postContainer).then(() => renderAdvertisement(postContainer)).then(() => modules_preload.remove());
 ;// CONCATENATED MODULE: ./src/js/article.js
 
