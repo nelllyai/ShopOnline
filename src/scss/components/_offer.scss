@@ -118,12 +118,6 @@
       grid-area: laptops;
       background-image: url("../img/laptops.jpg");
 
-      background-image: -webkit-image-set(
-        url("../img/laptops.avif") 1x,
-        url("../img/laptops.webp") 1x,
-        url("../img/laptops.jpg") 1x
-      );
-
       background-image: image-set(
         url("../img/laptops.avif") 1x,
         url("../img/laptops.webp") 1x,
@@ -147,12 +141,6 @@
       padding: 20px;
       grid-area: books;
       background-image: url("../img/books.jpg");
-
-      background-image: -webkit-image-set(
-        url("../img/books.avif") 1x,
-        url("../img/books.webp") 1x,
-        url("../img/books.jpg") 1x
-      );
 
       background-image: image-set(
         url("../img/books.avif") 1x,
@@ -187,12 +175,6 @@
       grid-area: time;
       background-image: url("../img/time.jpg");
 
-      background-image: -webkit-image-set(
-        url("../img/time.avif") 1x,
-        url("../img/time.webp") 1x,
-        url("../img/time.jpg") 1x
-      );
-
       background-image: image-set(
         url("../img/time.avif") 1x,
         url("../img/time.webp") 1x,
@@ -216,12 +198,6 @@
       grid-area: second-pair;
       background-image: url("../img/second-pair.jpg");
 
-      background-image: -webkit-image-set(
-        url("../img/second-pair.avif") 1x,
-        url("../img/second-pair.webp") 1x,
-        url("../img/second-pair.jpg") 1x
-      );
-
       background-image: image-set(
         url("../img/second-pair.avif") 1x,
         url("../img/second-pair.webp") 1x,
@@ -232,12 +208,6 @@
     &_red-shoes {
       grid-area: red-shoes;
       background-image: url("../img/red-shoes.jpg");
-
-      background-image: -webkit-image-set(
-        url("../img/red-shoes.avif") 1x,
-        url("../img/red-shoes.webp") 1x,
-        url("../img/red-shoes.jpg") 1x
-      );
 
       background-image: image-set(
         url("../img/red-shoes.avif") 1x,
@@ -266,12 +236,6 @@
       grid-area: ideas;
       background-image: url("../img/ideas.jpg");
 
-      background-image: -webkit-image-set(
-        url("../img/ideas.avif") 1x,
-        url("../img/ideas.webp") 1x,
-        url("../img/ideas.jpg") 1x
-      );
-
       background-image: image-set(
         url("../img/ideas.avif") 1x,
         url("../img/ideas.webp") 1x,
@@ -291,12 +255,6 @@
       padding: 0 110px 37px 30px;
       grid-area: benefit;
       background-image: url("../img/benefit.jpg");
-
-      background-image: -webkit-image-set(
-        url("../img/benefit.avif") 1x,
-        url("../img/benefit.webp") 1x,
-        url("../img/benefit.jpg") 1x
-      );
 
       background-image: image-set(
         url("../img/benefit.avif") 1x,
@@ -323,12 +281,6 @@
       grid-area: decorations;
       background-image: url("../img/decorations.jpg");
 
-      background-image: -webkit-image-set(
-        url("../img/decorations.avif") 1x,
-        url("../img/decorations.webp") 1x,
-        url("../img/decorations.jpg") 1x
-      );
-
       background-image: image-set(
         url("../img/decorations.avif") 1x,
         url("../img/decorations.webp") 1x,
@@ -339,13 +291,6 @@
     &_red-dress {
       grid-area: red-dress;
       background-image: url("../img/red-dress.jpg");
-
-      background-image: -webkit-image-set(
-        url("../img/red-dress.avif") 1x,
-        url("../img/red-dress.webp") 1x,
-        url("../img/red-dress.jpg") 1x
-      );
-
       background-image: image-set(
         url("../img/red-dress.avif") 1x,
         url("../img/red-dress.webp") 1x,
@@ -366,12 +311,6 @@
       grid-area: household-chemicals;
       background-image: url("../img/household-chemicals.jpg");
 
-      background-image: -webkit-image-set(
-        url("../img/household-chemicals.avif") 1x,
-        url("../img/household-chemicals.webp") 1x,
-        url("../img/household-chemicals.jpg") 1x
-      );
-
       background-image: image-set(
         url("../img/household-chemicals.avif") 1x,
         url("../img/household-chemicals.webp") 1x,
@@ -382,12 +321,6 @@
     &_balls {
       grid-area: balls;
       background-image: url("../img/balls.jpg");
-
-      background-image: -webkit-image-set(
-        url("../img/balls.avif") 1x,
-        url("../img/balls.webp") 1x,
-        url("../img/balls.jpg") 1x
-      );
 
       background-image: image-set(
         url("../img/balls.avif") 1x,
