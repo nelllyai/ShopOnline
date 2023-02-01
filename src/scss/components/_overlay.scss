@@ -7,12 +7,6 @@
   height: 1315px;
   width: 100%;
 
-  &_small {
-    @include phone {
-      height: 350px;
-    }
-  }
-
   @include laptop {
     height: 940px;
   }
@@ -28,12 +22,18 @@
   @include phone {
     height: 774px;
   }
+
+  &_small {
+    @include phone {
+      height: 200px;
+    }
+  }
 }
 
 .overlay__arrows {
   position: absolute;
-  top: calc(50% - 120px / 2);
-  left: calc(50% - 165px / 2);
+  top: calc(50% - 180px / 2);
+  left: calc(50% - 180px / 2);
   animation: rotation 2s infinite;
 }
 

@@ -11,7 +11,7 @@ const preload = {
     container.append(this.overlay);
   },
   showSmall(container) {
-    this.overlay.classList.add('overlay', 'overlay__small');
+    this.overlay.classList.add('overlay', 'overlay_small');
     this.overlay.innerHTML = this.arrows;
     container.append(this.overlay);
   },

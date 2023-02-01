@@ -1,15 +1,13 @@
 import { createCard } from "./createElements.js";
 import { getGoodsByCategory } from "./getGoods.js";
+import preload from "./preload.js";
 
-const placeCategoryList = async () => {
+const placeCategoryList = async container => {
   const url = new URL(window.location.href);
   const category = url.searchParams.get('search');
   const items = await getGoodsByCategory(category);
 
-  const container = document.querySelector('.category-goods__container');
-
-  const title = document.createElement('h1');
-  title.className = 'subtitle';
+  const title = document.querySelector('h1');
   title.textContent = category;
 
   const ul = document.createElement('ul');
@@ -21,4 +19,8 @@ const placeCategoryList = async () => {
   container.append(title, ul);
 };
 
-placeCategoryList();
+const container = document.querySelector('.category-goods__container');
+
+preload.showSmall(container);
+placeCategoryList(container)
+  .then(() => preload.remove());
