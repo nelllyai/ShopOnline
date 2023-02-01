@@ -77,22 +77,26 @@
 
   &__image {
     object-fit: contain;
-    max-width: 757px;
+    width: 757px;
+    height: 427px;
 
     @include laptop {
-      max-width: 540px;
+      width: 540px;
+      height: 303px;
     }
 
     @include break(990px) {
-      max-width: 420px;
+      width: 420px;
     }
 
     @include break(830px) {
-      max-width: 380px;
+      width: 380px;
+      height: 213px;
     }
 
     @include break(760px) {
-      max-width: 100%;
+      width: 280px;
+      height: 157px;
     }
   }
 
