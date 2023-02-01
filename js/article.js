@@ -1,4 +1,4 @@
-/******/ (() => { // webpackBootstrap
+/******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
 
@@ -146,7 +146,7 @@ const preload = {
     container.append(this.overlay);
   },
   showSmall(container) {
-    this.overlay.classList.add('overlay', 'overlay__small');
+    this.overlay.classList.add('overlay', 'overlay_small');
     this.overlay.innerHTML = this.arrows;
     container.append(this.overlay);
   },
@@ -154,7 +154,7 @@ const preload = {
     this.overlay.remove();
   }
 };
-/* harmony default export */ const modules_preload = (preload);
+/* harmony default export */ var modules_preload = (preload);
 ;// CONCATENATED MODULE: ./src/js/modules/post.js
 
 
